@@ -5,16 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioAmCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="Калькулятор Радіолюбителя" Height="450" Width="800" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center">
     <Grid>
         <DockPanel>
             <Menu Width="800" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <MenuItem Header="File" Height="30" Width="65" FontSize="14">
-                    <MenuItem Header="File" Height="30" Width="65" FontSize="14"/>
+                <MenuItem Header="Файл" Height="30" Width="65" FontSize="14" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <MenuItem Header="Вихід"/>
                 </MenuItem>
-                <MenuItem Header="File" Height="30" Width="65" FontSize="14"/>
+                <MenuItem Header="Розрахунок" Height="30" Width="90" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <MenuItem Header="Трансформатор"/>
+                    <MenuItem Header="Катушка індуктивності"/>
+                    <MenuItem Header="Фільтр"/>
+                    <MenuItem Header="Маркування радіоелементів"/>
+                    <MenuItem Header="Формули"/>
+                </MenuItem>
+                <MenuItem Header="Допомога" Height="30" Width="90" FontSize="14">
+                    <MenuItem Header="Про программу"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
-
     </Grid>
 </Window>
