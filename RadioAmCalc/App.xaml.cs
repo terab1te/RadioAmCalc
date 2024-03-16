@@ -10,5 +10,4 @@ namespace RadioAmCalc
     public partial class App : System.Windows.Application
     {
     }
-
 }
