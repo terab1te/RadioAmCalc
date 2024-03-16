@@ -19,12 +19,6 @@ namespace RadioAmCalc
         public MainWindow()
         {
             InitializeComponent();
-            Console.WriteLine("aaaa");
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
