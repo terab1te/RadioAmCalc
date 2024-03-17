@@ -9,4 +9,16 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="calculator.png" />
+    <None Remove="display.png" />
+    <None Remove="resistor.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="calculator.png" />
+    <Resource Include="display.png" />
+    <Resource Include="resistor.png" />
+  </ItemGroup>
+
 </Project>

@@ -24,7 +24,7 @@
             <TabItem Header="Про програму" x:Name="aboutApp" Height="20" MaxHeight="20">
                 <Grid Background="#FFE2E2E2">
                     <Button Content="Вийти" HorizontalAlignment="Left" Height="35" Margin="10,0,0,10" Width="120" Click="Exit" VerticalAlignment="Bottom"/>
-                    <Image HorizontalAlignment="Left" Height="380" Margin="27,34,0,0" VerticalAlignment="Top" Width="485" Source="/calculator.png"/>
+                    <Image HorizontalAlignment="Left" Height="380" Margin="27,24,0,0" VerticalAlignment="Top" Width="485" Source="/calculator.png"/>
                 </Grid>
             </TabItem>
         </TabControl>

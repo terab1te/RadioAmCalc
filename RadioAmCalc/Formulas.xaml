@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Formulas">
     <Grid Background="#FFE2E2E2">
-        <StackPanel Margin="10,10,615,345" Width="170" Height="90">
+        <StackPanel Margin="12,12,635,348" Height="90">
             <Label HorizontalAlignment="Center" FontSize="16">Вибір розділу</Label>
             <RadioButton Content="Радіотехніка" Height="20" Width="125" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="14"/>
             <RadioButton Content="Електротехніка" Height="20" Width="125" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="14"/>
