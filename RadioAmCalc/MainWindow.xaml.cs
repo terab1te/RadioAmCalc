@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MessageBox = System.Windows.MessageBox;
 
 namespace RadioAmCalc
 {
@@ -17,14 +18,48 @@ namespace RadioAmCalc
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int markingTabCounter = 0;
+        public int formulasTabCounter = 0;
         public MainWindow()
         {
             InitializeComponent();
         }
-        private void transformertab(object sender, RoutedEventArgs e)
-        {
-            
-        }
         private void Exit(object sender, RoutedEventArgs e) => this.Close();
+
+        // Создание вкладки Маркування радіоелементів
+        public void markingCreateTab(object sender, RoutedEventArgs e)
+        {
+            infoBox.Text = "  Введіть колір ліній в любому порядку або введіть значення SMD-резистора.";
+            markingTabCounter++;
+            Frame markingFrame = new Frame();
+            markingFrame.Source = new Uri("RadioElementsMarking.xaml", UriKind.Relative);
+            TabItem markingTab = new TabItem();
+            markingTab.Content = markingFrame;
+            markingTab.Header = $"Маркування радіоелементів {markingTabCounter}"; 
+            tabControl.Items.Add(markingTab);
+            tabControl.SelectedItem = markingTab;
+        }
+
+        // Создание вкладки Формули
+        private void formulasCreateTab(object sender, RoutedEventArgs e)
+        {
+            infoBox.Text = "  Введіть формулу. Введіть початкові значення.";
+            formulasTabCounter++;
+            
+            Frame formulasFrame = new Frame();
+            formulasFrame.Source = new Uri("Formulas.xaml", UriKind.Relative);
+            TabItem formulasTab = new TabItem();
+            formulasTab.Content = formulasFrame;
+            formulasTab.Header = $"Формули {formulasTabCounter}";
+            tabControl.Items.Add(formulasTab);
+            tabControl.SelectedItem = formulasTab;
+        }
+
+        // Переход на вкладку Про Програму
+        private void aboutAppOpen(object sender, RoutedEventArgs e)
+        {
+            infoBox.Text = "  Почніть розрахунки";
+            tabControl.SelectedItem = aboutApp;
+        }
     }
 }

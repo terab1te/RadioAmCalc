@@ -6,21 +6,29 @@
         xmlns:local="clr-namespace:RadioAmCalc"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Калькулятор Радіолюбителя" Height="450" Width="800">
-    <Grid>
+        Title="Калькулятор Радіолюбителя" Height="550" Width="900">
+    <Grid Background="#FFC7C7C7">
         <Menu Height="20" VerticalAlignment="Top">
             <MenuItem Header="Файл" BorderThickness="0,0,0,0" Height="20">
-                <MenuItem Header="Вихід" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <MenuItem Header="Вихід" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Exit"/>
+            </MenuItem>
+            <MenuItem Header="Розрахунок" BorderThickness="0,0,0,0" Height="20" >
+                <MenuItem Header="Маркіровна радіоелементів" Click="markingCreateTab"/>
+                <MenuItem Header="Формули" Click="formulasCreateTab"/>
+            </MenuItem>
+            <MenuItem Header="Допомога" BorderThickness="0,0,0,0" Height="20">
+                <MenuItem Header="Про програму" Click="aboutAppOpen"/>
             </MenuItem>
         </Menu>
-        <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,409,0,0" TextWrapping="Wrap" Text="Почніть розрахунки" VerticalAlignment="Center" Width="800"/>
-        <TabControl Margin="0,20,0,25">
-            <TabItem Header="Про програму">
-                <Grid Background="White">
-                    <Button Content="Вийти" HorizontalAlignment="Left" Height="35" Margin="10,279,0,37" Width="120" Click="Exit"/>
+        <TabControl Margin="0,20,0,25" x:Name="tabControl" >
+            <TabItem Header="Про програму" x:Name="aboutApp" Height="20" MaxHeight="20">
+                <Grid Background="#FFE2E2E2">
+                    <Button Content="Вийти" HorizontalAlignment="Left" Height="35" Margin="10,0,0,10" Width="120" Click="Exit" VerticalAlignment="Bottom"/>
+                    <Image HorizontalAlignment="Left" Height="380" Margin="27,34,0,0" VerticalAlignment="Top" Width="485" Source="/calculator.png"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        
+        <TextBlock x:Name="infoBox" HorizontalAlignment="Center" Height="20" TextWrapping="Wrap" Text="  Почніть розрахунки" VerticalAlignment="Bottom" Width="900"/>
+
     </Grid>
 </Window>
