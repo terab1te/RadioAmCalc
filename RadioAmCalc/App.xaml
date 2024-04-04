@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:RadioAmCalc"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="DigitalFont">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/#Digital-7">
+                
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
