@@ -12,13 +12,16 @@
   <ItemGroup>
     <None Remove="calculator.png" />
     <None Remove="display.png" />
+    <None Remove="img\calculator.png" />
+    <None Remove="img\display.png" />
+    <None Remove="img\resistor.png" />
     <None Remove="resistor.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="calculator.png" />
-    <Resource Include="display.png" />
-    <Resource Include="resistor.png" />
+    <Resource Include="img\calculator.png" />
+    <Resource Include="img\display.png" />
+    <Resource Include="img\resistor.png" />
   </ItemGroup>
 
 </Project>

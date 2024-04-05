@@ -8,6 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Formulas">
     <Grid Background="#FFE2E2E2">
+        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\1.PNG" Margin="271,238,116,41"/>
+        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\2.PNG" Margin="271,238,116,41"/>
+        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\3.PNG" Margin="271,238,116,41"/>
+        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\4.PNG" Margin="271,238,116,41"/>
+        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\5.PNG" Margin="271,238,116,41"/>
+        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\6.PNG" Margin="271,238,116,41"/>
         <StackPanel Margin="12,12,635,348" Height="90">
             <Label HorizontalAlignment="Center" FontSize="16">Вибір розділу</Label>
             <RadioButton Content="Радіотехніка" Height="20" Width="125" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="14"/>
@@ -15,12 +21,15 @@
         </StackPanel>
         <StackPanel Margin="165,10,10,205" >
             <Label VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10,10,10,10" FontSize="16">Вибір формули</Label>
-            <ListView Height="179" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,0,0,0" Width="600">
+            <ListView Height="182" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="600" RenderTransformOrigin="0.494,0.52">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
                     </GridView>
                 </ListView.View>
+                <ListBoxItem x:Name ="Item1" Content="Резонансна частота коливального контуру"/>
+                <ListBoxItem x:Name ="Item2" Content="Частота, період, довжина хвилі"/>
+                <ListBoxItem x:Name ="Item3" Content="Добротність котушки індуктивності"/>
             </ListView>
 
         </StackPanel>
