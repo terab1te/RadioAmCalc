@@ -11,15 +11,21 @@
 
   <ItemGroup>
     <None Remove="calculator.png" />
+    <None Remove="cross.png" />
     <None Remove="display.png" />
     <None Remove="img\calculator.png" />
+    <None Remove="img\cross.png" />
     <None Remove="img\display.png" />
     <None Remove="img\resistor.png" />
     <None Remove="resistor.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="cross.png" />
     <Resource Include="img\calculator.png" />
+    <Resource Include="img\cross.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\display.png" />
     <Resource Include="img\resistor.png" />
   </ItemGroup>

@@ -47,8 +47,7 @@ namespace RadioAmCalc
         private void Resistor_Checked(object sender, RoutedEventArgs e)
         {
             resistor.Opacity = 1;
-            capacitor.Opacity = 0.5;
-            throttle.Opacity = 0.5;
+
         }
     }
 }
