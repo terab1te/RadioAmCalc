@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
 using TabControl = System.Windows.Controls.TabControl;
+using Button = System.Windows.Controls.Button;
 
 namespace RadioAmCalc
 {
@@ -46,8 +47,36 @@ namespace RadioAmCalc
 
         private void Resistor_Checked(object sender, RoutedEventArgs e)
         {
-            resistor.Opacity = 1;
+            
 
         }
+        //Clear buttons
+        private void clearButtonsClick(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            if(clickedButton != null) {
+                switch (clickedButton.Name) {
+                    case "clearButton1":
+                        clearButton1.Opacity = 1;
+                        break;
+                    case "clearButton2":
+                        clearButton2.Opacity = 1;
+                        break;
+                    case "clearButton3":
+                        clearButton3.Opacity = 1;
+                        break;
+                    case "clearButton4":
+                        clearButton4.Opacity = 1;
+                        break;
+                    case "clearButton5":
+                        clearButton5.Opacity = 1;
+                        break;
+                    case "clearButton6":
+                        clearButton6.Opacity = 1;
+                        break;
+                }
+            }
+        }
+  
     }
 }

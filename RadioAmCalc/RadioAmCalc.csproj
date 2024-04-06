@@ -13,6 +13,7 @@
     <None Remove="calculator.png" />
     <None Remove="cross.png" />
     <None Remove="display.png" />
+    <None Remove="Fonts\digital_7.ttf" />
     <None Remove="img\calculator.png" />
     <None Remove="img\cross.png" />
     <None Remove="img\display.png" />
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <Resource Include="cross.png" />
+    <Resource Include="Fonts\digital_7.ttf" />
     <Resource Include="img\calculator.png" />
     <Resource Include="img\cross.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
