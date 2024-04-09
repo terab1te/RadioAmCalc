@@ -43,14 +43,14 @@ namespace RadioAmCalc
         // Создание вкладки Формули
         private void formulasCreateTab(object sender, RoutedEventArgs e)
         {
-            infoBox.Text = "  Введіть формулу. Введіть початкові значення.";
+            infoBox.Text = "Виберіть фільтр. Введіть початкові значення.";
             formulasTabCounter++;
             
             Frame formulasFrame = new Frame();
             formulasFrame.Source = new Uri("Formulas.xaml", UriKind.Relative);
             TabItem formulasTab = new TabItem();
             formulasTab.Content = formulasFrame;
-            formulasTab.Header = $"Формули {formulasTabCounter}";
+            formulasTab.Header = $"Фільтри {formulasTabCounter}";
             tabControl.Items.Add(formulasTab);
             tabControl.SelectedItem = formulasTab;
         }

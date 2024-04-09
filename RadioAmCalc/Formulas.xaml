@@ -6,33 +6,55 @@
       xmlns:local="clr-namespace:RadioAmCalc"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Formulas">
+      Title="Filters">
     <Grid Background="#FFE2E2E2">
-        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\1.PNG" Margin="271,238,116,41"/>
-        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\2.PNG" Margin="271,238,116,41"/>
-        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\3.PNG" Margin="271,238,116,41"/>
-        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\4.PNG" Margin="271,238,116,41"/>
-        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\5.PNG" Margin="271,238,116,41"/>
-        <Image Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\6.PNG" Margin="271,238,116,41"/>
-        <StackPanel Margin="12,12,635,348" Height="90">
-            <Label HorizontalAlignment="Center" FontSize="16">Вибір розділу</Label>
-            <RadioButton Content="Радіотехніка" Height="20" Width="125" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="14"/>
-            <RadioButton Content="Електротехніка" Height="20" Width="125" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="14"/>
-        </StackPanel>
-        <StackPanel Margin="165,10,10,205" >
-            <Label VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10,10,10,10" FontSize="16">Вибір формули</Label>
-            <ListView Height="182" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="600" RenderTransformOrigin="0.494,0.52">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-                <ListBoxItem x:Name ="Item1" Content="Резонансна частота коливального контуру"/>
-                <ListBoxItem x:Name ="Item2" Content="Частота, період, довжина хвилі"/>
-                <ListBoxItem x:Name ="Item3" Content="Добротність котушки індуктивності"/>
-            </ListView>
+        <Label HorizontalAlignment="Left" FontSize="16" Margin="10,61,0,-61" Content=""/>
+        <RadioButton Content="Фільтр НЧ" Height="20" Width="125" FontSize="14" Margin="116,112,559,318"/>
+        <RadioButton Content="Фільтр ВЧ" Height="20" Width="125" FontSize="14" Margin="116,171,559,259"/>
 
-        </StackPanel>
+
         <Button Content="Зачинити" HorizontalAlignment="Left" Height="35" Margin="10,0,0,10" Width="120" VerticalAlignment="Bottom" Click="CloseTab"/>
+        <Label Content="f =" HorizontalAlignment="Left" Height="40" Margin="250,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
+        <Label Content="C =" HorizontalAlignment="Left" Height="40" Margin="375,61,0,0" VerticalAlignment="Top" Width="44" FontSize="22"/>
+        <Label Content="L =" HorizontalAlignment="Left" Height="40" Margin="513,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
+        <Label Content="R =" HorizontalAlignment="Left" Height="40" Margin="650,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="424,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="550,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="690,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <Label Content="Фільтри нижніх частот (ФНЧ)" HorizontalAlignment="Left" Height="46" Margin="334,9,0,0" VerticalAlignment="Top" Width="336" FontSize="22"/>
+        <Label Content="Фільтри верніх частот (ФВЧ)" HorizontalAlignment="Left" Height="46" Margin="320,15,0,0" VerticalAlignment="Top" Width="336" FontSize="22" Visibility="Hidden"/>
+        <Image Margin="15,101,737,307" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ.PNG" Stretch="Fill"/>
+        <Image Margin="15,164,735,244" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\ВЧ.PNG" Stretch="Fill"/>
+        <Image Margin="261,101,56,16" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ фільтри.PNG" Stretch="Fill"/>
+        <Image Margin="261,101,56,16" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\ВЧ Фільтри.PNG" Visibility="Hidden"/>
+        <Label Content="Вибір фільтра" HorizontalAlignment="Left" Height="31" Margin="10,61,0,0" VerticalAlignment="Top" Width="134"/>
+        <ComboBox HorizontalAlignment="Left" Height="22" Margin="322,70,0,0" VerticalAlignment="Top" Width="55">
+            <ComboBoxItem Content="Гц"/>
+            <ComboBoxItem Content="кГц"/>
+            <ComboBoxItem Content="мГц"/>
+            <ComboBoxItem Content="гГц"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Height="22" Margin="459,70,0,0" VerticalAlignment="Top" Width="55">
+            <ComboBoxItem Content="пФ"/>
+            <ComboBoxItem Content="нФ"/>
+            <ComboBoxItem Content="мкФ"/>
+            <ComboBoxItem Content="Ф"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Height="22" Margin="585,70,0,0" VerticalAlignment="Top" Width="55">
+            <ComboBoxItem Content="мкГн"/>
+            <ComboBoxItem Content="мГн"/>
+            <ComboBoxItem Content="Гн"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Height="22" Margin="725,70,0,0" VerticalAlignment="Top" Width="55">
+            <ComboBoxItem Content="Ом"/>
+            <ComboBoxItem Content="кОм"/>
+            <ComboBoxItem Content="мОм"/>
+        </ComboBox>
+        <Label Content="Частота зрізу" HorizontalAlignment="Left" Height="27" Margin="287,43,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Ємність" HorizontalAlignment="Left" Height="27" Margin="439,43,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Індуктивність" HorizontalAlignment="Left" Height="27" Margin="550,43,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Опір" HorizontalAlignment="Left" Height="27" Margin="708,43,0,0" VerticalAlignment="Top" Width="92"/>
+
     </Grid>
 </Page>

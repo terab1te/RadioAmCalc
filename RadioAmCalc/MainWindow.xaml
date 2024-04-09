@@ -19,7 +19,7 @@
             </MenuItem>
             <MenuItem Header="Розрахунок" BorderThickness="0,0,0,0" Height="20" >
                 <MenuItem Header="Маркіровна радіоелементів" Click="markingCreateTab"/>
-                <MenuItem Header="Формули" Click="formulasCreateTab"/>
+                <MenuItem Header="Фільтри" Click="formulasCreateTab"/>
             </MenuItem>
             <MenuItem Header="Допомога" BorderThickness="0,0,0,0" Height="20">
                 <MenuItem Header="Про програму" Click="aboutAppOpen"/>
