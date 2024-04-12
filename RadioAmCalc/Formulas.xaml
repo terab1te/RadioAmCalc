@@ -18,15 +18,15 @@
         <Label Content="C =" HorizontalAlignment="Left" Height="40" Margin="375,61,0,0" VerticalAlignment="Top" Width="44" FontSize="22"/>
         <Label Content="L =" HorizontalAlignment="Left" Height="40" Margin="513,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
         <Label Content="R =" HorizontalAlignment="Left" Height="40" Margin="650,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="424,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="550,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="690,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
-        <Label Content="Фільтри нижніх частот (ФНЧ)" HorizontalAlignment="Left" Height="46" Margin="334,9,0,0" VerticalAlignment="Top" Width="336" FontSize="22"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="22" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="22" Margin="424,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="22" Margin="550,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="22" Margin="690,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
+        <Label Content="Фільтри нижніх частот (ФНЧ)" HorizontalAlignment="Left" Height="46" Margin="334,9,0,0" VerticalAlignment="Top" Width="336" FontSize="22" />
         <Label Content="Фільтри верніх частот (ФВЧ)" HorizontalAlignment="Left" Height="46" Margin="320,15,0,0" VerticalAlignment="Top" Width="336" FontSize="22" Visibility="Hidden"/>
         <Image Margin="15,101,737,307" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ.PNG" Stretch="Fill"/>
         <Image Margin="15,164,735,244" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\ВЧ.PNG" Stretch="Fill"/>
-        <Image Margin="261,101,56,16" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ фільтри.PNG" Stretch="Fill"/>
+        <Image Margin="261,101,56,16" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ фільтри.PNG" Stretch="Fill" Visibility="Hidden"/>
         <Image Margin="261,101,56,16" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\ВЧ Фільтри.PNG" Visibility="Hidden"/>
         <Label Content="Вибір фільтра" HorizontalAlignment="Left" Height="31" Margin="10,61,0,0" VerticalAlignment="Top" Width="134"/>
         <ComboBox HorizontalAlignment="Left" Height="22" Margin="322,70,0,0" VerticalAlignment="Top" Width="55">
