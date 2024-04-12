@@ -57,10 +57,7 @@ namespace RadioAmCalc
         }
 
         // Переход на вкладку Про Програму
-        private void aboutAppOpen(object sender, RoutedEventArgs e)
-        {
-            tabControl.SelectedItem = aboutApp;
-        }
+        private void aboutAppOpen(object sender, RoutedEventArgs e) => tabControl.SelectedItem = aboutApp;
 
         void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
