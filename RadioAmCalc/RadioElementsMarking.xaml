@@ -12,12 +12,12 @@
         <StackPanel Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="146" Width="255">
             <Label HorizontalAlignment="Center" FontSize="24" Padding="0,5,5,5">Вибір радіоелементів</Label>
             <Viewbox Height="25" Width="255" HorizontalAlignment="Left" Margin="7,0,0,0">
-                <RadioButton Content="Резистор" Height="16" Width="98"  Checked="Resistor_Checked" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <RadioButton Content="Резистор" Height="16" Width="98"  Checked="Resistor_Checked" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="resistorcheck"/>
             </Viewbox>
-            <Viewbox Height="25" Width="255" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <RadioButton Content="Конденсатор" Height="17" Width="95" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0"/>
+            <Viewbox Height="25" Width="255" HorizontalAlignment="Left" Margin="7,0,0,0">
+                <RadioButton Content="Конденсатор" Height="17" Width="95" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" Checked="Capacitor_Checked"/>
             </Viewbox>
-            <Viewbox Height="25" Width="255" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Viewbox Height="25" Width="255" HorizontalAlignment="Left" Margin="7,0,0,0">
                 <RadioButton Content="Дросель" Height="17" Width="170" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
             </Viewbox>
         </StackPanel>
@@ -70,7 +70,7 @@
                     <ImageBrush ImageSource="\img\cross.png"/>
                 </Button.Background>
             </Button>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,30" VerticalAlignment="Bottom" Width="15" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="clearButton1" Click="clearButtonsClick" Opacity="0.5" >
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,30" VerticalAlignment="Bottom" Width="15" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="clearButton1" Click="clearButtonsClick" Opacity="0.5">
                 <Button.Background>
                     <ImageBrush ImageSource="\img\cross.png"/>
                 </Button.Background>
@@ -78,111 +78,111 @@
             <!--White buttons-->
             <Label Content="Білий" Margin="0,0,225,50" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" />
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" />
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" />
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" />
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" />
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" />
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="whitebtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="whitebtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="whitebtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="whitebtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="whitebtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,50" VerticalAlignment="Bottom" Width="15" Background="White" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="whitebtn1"/>
             <!--Gray buttons-->
             <Label Content="Сірий" Margin="0,0,224,70" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,70" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="graybtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="graybtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,314,144,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="graybtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="graybtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="graybtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,70" VerticalAlignment="Bottom" Width="15" Background="#AFAFAF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="graybtn1"/>
             <!--Purple buttons-->
             <Label Content="Фіолетовий" Margin="0,0,224,90" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="purplebtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="purplebtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="purplebtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="purplebtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="purplebtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,90" VerticalAlignment="Bottom" Width="15" Background="#FF8F11E7" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="purplebtn1"/>
             <!--Lightblue buttons-->
             <Label Content="Голубий" Margin="0,0,224,110" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="lbluebtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="lbluebtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="lbluebtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="lbluebtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="lbluebtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,110" VerticalAlignment="Bottom" Width="15" Background="#BBC8FF" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="lbluebtn1"/>
             <!--Green buttons-->
             <Label Content="Зелений" Margin="0,0,224,130" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="greenbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="greenbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="greenbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="greenbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="greenbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,130" VerticalAlignment="Bottom" Width="15" Background="#18A718" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="greenbtn1"/>
             <!--Yellow buttons-->
             <Label Content="Жовтий" Margin="0,0,224,150" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"  x:Name="yellowbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"  x:Name="yellowbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="yellowbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"  x:Name="yellowbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"  x:Name="yellowbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,150" VerticalAlignment="Bottom" Width="15" Background="#FFFF50" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="yellowbtn1"/>
             <!--Orange buttons-->
             <Label Content="Помаранчевий" Margin="0,0,224,170" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="orangebtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="orangebtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="orangebtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="orangebtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="orangebtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,170" VerticalAlignment="Bottom" Width="15" Background="#FF9933" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="orangebtn1"/>
             <!--Red buttons-->
             <Label Content="Червоний" Margin="0,0,224,190" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="redbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="redbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="redbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="redbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="redbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,190" VerticalAlignment="Bottom" Width="15" Background="#F10000" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="redbtn1"/>
             <!--Brown buttons-->
             <Label Content="Коричневий" Margin="0,0,224,210" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="brownbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="brownbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="brownbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="brownbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="brownbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,210" VerticalAlignment="Bottom" Width="15" Background="#997333" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="brownbtn1"/>
             <!--Black buttons-->
             <Label Content="Чорний" Margin="0,0,224,230" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="blackbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="blackbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="blackbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="blackbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="blackbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,230" VerticalAlignment="Bottom" Width="15" Background="Black" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" x:Name="blackbtn1"/>
             <!--Gold buttons-->
             <Label Content="Золотистий" Margin="0,0,224,250" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button Height="15" Margin="0,0,122,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="goldbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="goldbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="goldbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="goldbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="goldbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,250" VerticalAlignment="Bottom" Width="15" Background="#E7D221" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="goldbtn1"/>
             <!--Silver buttons-->
             <Label Content="Серебристий" Margin="0,0,224,270" VerticalAlignment="Bottom" Height="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,0" UseLayoutRounding="True" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Width="116" HorizontalAlignment="Right"/>
 
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,100,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn6"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,122,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn5"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,144,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn4"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,166,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn3"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,188,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn2"/>
+            <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn1"/>
 
         </Grid>
 

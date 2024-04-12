@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
+using TabControl = System.Windows.Controls.TabControl;
 
 namespace RadioAmCalc
 {
@@ -23,6 +24,7 @@ namespace RadioAmCalc
         public MainWindow()
         {
             InitializeComponent();
+            tabControl.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(TabControl_SelectionChanged);
         }
         private void Exit(object sender, RoutedEventArgs e) => this.Close();
 
@@ -35,7 +37,8 @@ namespace RadioAmCalc
             markingFrame.Source = new Uri("RadioElementsMarking.xaml", UriKind.Relative);
             TabItem markingTab = new TabItem();
             markingTab.Content = markingFrame;
-            markingTab.Header = $"Маркування радіоелементів {markingTabCounter}"; 
+            markingTab.Header = $"Маркування радіоелементів {markingTabCounter}";
+            markingTab.Name = "resMarkingTab";
             tabControl.Items.Add(markingTab);
             tabControl.SelectedItem = markingTab;
         }
@@ -45,12 +48,12 @@ namespace RadioAmCalc
         {
             infoBox.Text = "Виберіть фільтр. Введіть початкові значення.";
             formulasTabCounter++;
-            
             Frame formulasFrame = new Frame();
             formulasFrame.Source = new Uri("Formulas.xaml", UriKind.Relative);
             TabItem formulasTab = new TabItem();
             formulasTab.Content = formulasFrame;
             formulasTab.Header = $"Фільтри {formulasTabCounter}";
+            formulasTab.Name = "filtersTab";
             tabControl.Items.Add(formulasTab);
             tabControl.SelectedItem = formulasTab;
         }
@@ -60,6 +63,26 @@ namespace RadioAmCalc
         {
             infoBox.Text = "  Почніть розрахунки";
             tabControl.SelectedItem = aboutApp;
+        }
+
+        void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            TabItem selected = tabControl.SelectedItem as TabItem;
+            switch(selected.Name)
+            {
+                case "aboutApp":
+                    infoBox.Text = "  Почніть розрахунки";
+                    break;
+                case "resMarkingTab":
+                    infoBox.Text = "  Введіть колір ліній в любому порядку або введіть значення SMD-резистора.";
+                    break;
+                case "filtersTab":
+                    infoBox.Text = "Виберіть фільтр. Введіть початкові значення.";
+                    break;
+                default:
+                    break;
+            }
+            
         }
     }
 }

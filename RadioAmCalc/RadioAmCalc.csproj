@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Intersoft.Crosslight" Version="6.0.5000.975" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="cross.png" />
     <Resource Include="Fonts\digital_7.ttf" />
     <Resource Include="img\calculator.png" />

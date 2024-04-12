@@ -47,15 +47,56 @@ namespace RadioAmCalc
 
         private void Resistor_Checked(object sender, RoutedEventArgs e)
         {
-            
+            clearButton6.IsEnabled = false;
+            whitebtn6.IsEnabled = false;
+            whitebtn5.IsEnabled = false;
+            whitebtn4.IsEnabled = false;
 
+            graybtn6.IsEnabled = false;
+            purplebtn6.IsEnabled = false;
+            lbluebtn6.IsEnabled = false;
+            greenbtn6.IsEnabled = false;
+
+            yellowbtn6.IsEnabled = false;
+            yellowbtn5.IsEnabled = false;
+            yellowbtn4.IsEnabled = false;
+
+            orangebtn6.IsEnabled = false;
+            orangebtn5.IsEnabled = false;
+            orangebtn4.IsEnabled = false;
+
+            redbtn6.IsEnabled = false;
+            brownbtn6.IsEnabled = false;
+
+            blackbtn6.IsEnabled = false;
+            blackbtn5.IsEnabled = false;
+            blackbtn4.IsEnabled = false;
+            blackbtn1.IsEnabled = false;
+
+            goldbtn6.IsEnabled = false;
+            goldbtn2.IsEnabled = false;
+            goldbtn1.IsEnabled = false;
+
+            silvbtn6.IsEnabled = false;
+            silvbtn2.IsEnabled = false;
+            silvbtn1.IsEnabled = false;
+        }
+
+        private void Capacitor_Checked(object sender, RoutedEventArgs e)
+        {
+            whitebtn4.IsEnabled = false;
+            yellowbtn4.IsEnabled = false;
+            orangebtn4.IsEnabled = false;
+            blackbtn4.IsEnabled = false;
         }
         //Clear buttons
         private void clearButtonsClick(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
-            if(clickedButton != null) {
-                switch (clickedButton.Name) {
+            if (clickedButton != null)
+            {
+                switch (clickedButton.Name)
+                {
                     case "clearButton1":
                         clearButton1.Opacity = 1;
                         break;
@@ -77,6 +118,5 @@ namespace RadioAmCalc
                 }
             }
         }
-  
     }
 }
