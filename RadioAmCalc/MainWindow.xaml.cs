@@ -31,7 +31,6 @@ namespace RadioAmCalc
         // Создание вкладки Маркування радіоелементів
         public void markingCreateTab(object sender, RoutedEventArgs e)
         {
-            infoBox.Text = "  Введіть колір ліній в любому порядку або введіть значення SMD-резистора.";
             markingTabCounter++;
             Frame markingFrame = new Frame();
             markingFrame.Source = new Uri("RadioElementsMarking.xaml", UriKind.Relative);
@@ -46,7 +45,6 @@ namespace RadioAmCalc
         // Создание вкладки Формули
         private void formulasCreateTab(object sender, RoutedEventArgs e)
         {
-            infoBox.Text = "Виберіть фільтр. Введіть початкові значення.";
             formulasTabCounter++;
             Frame formulasFrame = new Frame();
             formulasFrame.Source = new Uri("Formulas.xaml", UriKind.Relative);
@@ -61,7 +59,6 @@ namespace RadioAmCalc
         // Переход на вкладку Про Програму
         private void aboutAppOpen(object sender, RoutedEventArgs e)
         {
-            infoBox.Text = "  Почніть розрахунки";
             tabControl.SelectedItem = aboutApp;
         }
 
@@ -82,7 +79,6 @@ namespace RadioAmCalc
                 default:
                     break;
             }
-            
         }
     }
 }
