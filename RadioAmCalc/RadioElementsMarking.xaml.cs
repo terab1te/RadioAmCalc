@@ -24,10 +24,103 @@ namespace RadioAmCalc
     /// </summary>
     public partial class RadioElementsMarking : Page
     {
+        public List<Button> buttonsList;
         public RadioElementsMarking()
         {
             InitializeComponent();
             resistorCheck.IsChecked = true;
+            buttonsList = new List<Button>() {
+            clearButton1,
+            clearButton2,
+            clearButton3,
+            clearButton4,
+            clearButton5,
+            clearButton6,
+
+            whitebtn1,
+            whitebtn2,
+            whitebtn3,
+            whitebtn4,
+            whitebtn5,
+            whitebtn6,
+
+            graybtn1,
+            graybtn2,
+            graybtn3,
+            graybtn4,
+            graybtn5,
+            graybtn6,
+
+            purplebtn1,
+            purplebtn2,
+            purplebtn3,
+            purplebtn4,
+            purplebtn5,
+            purplebtn6,
+
+            lbluebtn1,
+            lbluebtn2,
+            lbluebtn3,
+            lbluebtn4,
+            lbluebtn5,
+            lbluebtn6,
+
+            greenbtn1,
+            greenbtn2,
+            greenbtn3,
+            greenbtn4,
+            greenbtn5,
+            greenbtn6,
+
+            yellowbtn1,
+            yellowbtn2,
+            yellowbtn3,
+            yellowbtn4,
+            yellowbtn5,
+            yellowbtn6,
+
+            orangebtn1,
+            orangebtn2,
+            orangebtn3,
+            orangebtn4,
+            orangebtn5,
+            orangebtn6,
+
+            redbtn1,
+            redbtn2,
+            redbtn3,
+            redbtn4,
+            redbtn5,
+            redbtn6,
+
+            brownbtn1,
+            brownbtn2,
+            brownbtn3,
+            brownbtn4,
+            brownbtn5,
+            brownbtn6,
+
+            blackbtn1,
+            blackbtn2,
+            blackbtn3,
+            blackbtn4,
+            blackbtn5,
+            blackbtn6,
+
+            goldbtn1,
+            goldbtn2,
+            goldbtn3,
+            goldbtn4,
+            goldbtn5,
+            goldbtn6,
+
+            silvbtn1,
+            silvbtn2,
+            silvbtn3,
+            silvbtn4,
+            silvbtn5,
+            silvbtn6
+            };
         }
 
         public void CloseTab(object sender, RoutedEventArgs e)
@@ -49,6 +142,7 @@ namespace RadioAmCalc
         private void Resistor_Checked(object sender, RoutedEventArgs e)
         {
             enableAllColors();
+            clearFields();
             
             clearButton6.IsEnabled = false;
             whitebtn6.IsEnabled = false;
@@ -87,6 +181,7 @@ namespace RadioAmCalc
 
         private void Capacitor_Checked(object sender, RoutedEventArgs e)
         {
+            clearFields();
             enableAllColors();
             whitebtn4.IsEnabled = false;
             yellowbtn4.IsEnabled = false;
@@ -96,10 +191,14 @@ namespace RadioAmCalc
             goldbtn2.IsEnabled = false;
             goldbtn5.IsEnabled = false;
             goldbtn6.IsEnabled = false;
+            silvbtn6.IsEnabled = false;
             silvbtn5.IsEnabled = false;
+            silvbtn2.IsEnabled = false;
+            silvbtn1.IsEnabled = false;
         }
         private void throttle_Checked(object sender, RoutedEventArgs e)
         {
+            clearFields();
             enableAllColors();
             clearButton6.IsEnabled = false;
             clearButton5.IsEnabled = false;
@@ -145,7 +244,14 @@ namespace RadioAmCalc
             blackbtn1.IsEnabled = false;
 
             silvbtn5.IsEnabled = false;
+            silvbtn1.IsEnabled = false;
+            silvbtn2.IsEnabled = false;
+            silvbtn6.IsEnabled = false;
+
             goldbtn5.IsEnabled = false;
+            goldbtn1.IsEnabled = false;
+            goldbtn2.IsEnabled = false;
+            goldbtn6.IsEnabled = false;
         }
         //Clear buttons
         private void clearButtonsClick(object sender, RoutedEventArgs e)
@@ -156,22 +262,37 @@ namespace RadioAmCalc
                 switch (clickedButton.Name)
                 {
                     case "clearButton1":
-                        ohmQuantityLabel.Content = "";
+                        unDotButtons(1);
+                        ohmQuantityLabel.Content = null;
                         clearButton1.Opacity = 1;
                         break;
                     case "clearButton2":
+                        unDotButtons(2);
+                        
                         clearButton2.Opacity = 1;
                         break;
                     case "clearButton3":
+                        unDotButtons(3);
                         clearButton3.Opacity = 1;
                         break;
                     case "clearButton4":
+                        unDotButtons(4);
                         clearButton4.Opacity = 1;
                         break;
                     case "clearButton5":
+                        unDotButtons(5);
+                        toleranceLabel.Content = "±%";
                         clearButton5.Opacity = 1;
+                        blackbtn3.IsEnabled = true;
+                        goldbtn3.IsEnabled = true;
+                        silvbtn3.IsEnabled = true;
+
+                        blackbtn4.IsEnabled = false;
+                        orangebtn4.IsEnabled = false;
+                        yellowbtn4.IsEnabled = false;
                         break;
                     case "clearButton6":
+                        unDotButtons(6);
                         clearButton6.Opacity = 1;
                         break;
                 }
@@ -184,134 +305,309 @@ namespace RadioAmCalc
             {
                 if(resistorCheck.IsChecked == true)
                 {
-                    double unfocusOpacity = 0.2;
+                    double unfocusOpacity = 0.3;
                     switch (clickedButton.Name)
                     {
                         // 5 tolerance
                         case "graybtn5":
-                            toleranceLabel.Content = "±0.05%";
+                            markingColor("±0.05%", 5, graybtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "purplebtn5":
-                            toleranceLabel.Content = "±0.1%";
+                            markingColor("±0.1%", 5, purplebtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "lbluebtn5":
-                            toleranceLabel.Content = "±0.25%";
+                            markingColor("±0.25%", 5, lbluebtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "greenbtn5":
-                            toleranceLabel.Content = "±0.5%";
+                            markingColor("±0.5%", 5, greenbtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "redbtn5":
-                            toleranceLabel.Content = "±2%";
+                            markingColor("±2%", 5, redbtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "brownbtn5":
-                            toleranceLabel.Content = "±1%";
+                            markingColor("±1%", 5, brownbtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "goldbtn5":
-                            toleranceLabel.Content = "±5%";
+                            markingColor("±5%", 5, goldbtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         case "silvbtn5":
-                            toleranceLabel.Content = "±10%";
+                            markingColor("±10%", 5, silvbtn5);
                             clearButton5.Opacity = unfocusOpacity;
                             break;
                         //
                         case "whitebtn1":
-                            ohmQuantityLabel.Content = "9";
+                            markingColor("9", 1, whitebtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "graybtn1":
-                            ohmQuantityLabel.Content = "8";
+                            markingColor("8", 1, graybtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "purplebtn1":
-                            ohmQuantityLabel.Content = "7";
+                            markingColor("7", 1, purplebtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "lbluebtn1":
-                            ohmQuantityLabel.Content = "6";
+                            markingColor("6", 1, lbluebtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "greenbtn1":
-                            ohmQuantityLabel.Content = "5";
+                            markingColor("5", 1, greenbtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "yellowbtn1":
-                            ohmQuantityLabel.Content = "4";
+                            markingColor("4", 1, yellowbtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "orangebtn1":
-                            ohmQuantityLabel.Content = "3";
+                            markingColor("3", 1, orangebtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "redbtn1":
-                            ohmQuantityLabel.Content = "2";
+                            markingColor("2", 1, redbtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
                         case "brownbtn1":
-                            ohmQuantityLabel.Content = "1";
+                            markingColor("1", 1, brownbtn1);
                             clearButton1.Opacity = unfocusOpacity;
                             break;
+                        //
+                        case "whitebtn2":
+                            markingColor("9", 2, whitebtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "graybtn2":
+                            markingColor("8", 2, graybtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "purplebtn2":
+                            markingColor("7", 2, purplebtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "lbluebtn2":
+                            markingColor("6", 2, lbluebtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "greenbtn2":
+                            markingColor("5", 2, greenbtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "yellowbtn2":
+                            markingColor("4", 2, yellowbtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "orangebtn2":
+                            markingColor("3", 2, orangebtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "redbtn2":
+                            markingColor("2", 2, redbtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        case "brownbtn2":
+                            markingColor("1", 2, brownbtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
                     }
-                    
                 }
-                
             }
         }
-
-            private void enableAllColors()
+        private void markingColor(string content, int col, Button btn)
         {
-            clearButton6.IsEnabled = true;
-            clearButton5.IsEnabled = true;
-            whitebtn6.IsEnabled = true;
-            whitebtn5.IsEnabled = true;
-            whitebtn4.IsEnabled = true;
-            whitebtn3.IsEnabled = true;
-            graybtn6.IsEnabled = true;
-            graybtn5.IsEnabled = true;
-            graybtn4.IsEnabled = true;
-            graybtn3.IsEnabled = true;
-            purplebtn6.IsEnabled = true;
-            purplebtn5.IsEnabled = true;
-            purplebtn4.IsEnabled = true;
-            purplebtn3.IsEnabled = true;
+            switch (col)
+            {
+                case 1:
+                    if (ohmQuantityLabel.Content.ToString().Length >= 2) {
+                        char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
+                        charArray[0] = Convert.ToChar(content);
+                        ohmQuantityLabel.Content = new string(charArray);
+                    }
+                    else if (ohmQuantityLabel.Content.ToString().Length == 1) ohmQuantityLabel.Content = content;
+                    break;
+                case 2:
+                        ohmQuantityLabel.Content += content;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    blackbtn3.IsEnabled = false;
+                    goldbtn3.IsEnabled = false;
+                    silvbtn3.IsEnabled = false;
 
-            lbluebtn6.IsEnabled = true;
-            lbluebtn5.IsEnabled = true;
-            lbluebtn4.IsEnabled = true;
-            lbluebtn3.IsEnabled = true;
-
-            greenbtn6.IsEnabled = true;
-            greenbtn5.IsEnabled = true;
-            greenbtn4.IsEnabled = true;
-            greenbtn3.IsEnabled = true;
-
-            yellowbtn6.IsEnabled = true;
-            yellowbtn5.IsEnabled = true;
-            yellowbtn4.IsEnabled = true;
-
-            orangebtn6.IsEnabled = true;
-            orangebtn5.IsEnabled = true;
-            orangebtn4.IsEnabled = true;
-
-            redbtn6.IsEnabled = true;
-            redbtn5.IsEnabled = true;
-
-            brownbtn6.IsEnabled = true;
-            brownbtn5.IsEnabled = true;
-
-            blackbtn6.IsEnabled = true;
-            blackbtn5.IsEnabled = true;
-            blackbtn4.IsEnabled = true;
-
-            goldbtn5.IsEnabled = true;
-
-            silvbtn5.IsEnabled = true;
+                    blackbtn4.IsEnabled = true;
+                    orangebtn4.IsEnabled = true;
+                    yellowbtn4.IsEnabled = true;
+                    toleranceLabel.Content = content;
+                    break;
+            }
+            unDotButtons(col);
+            dotButton(btn);
         }
+        private void enableAllColors()
+        {
+            if (buttonsList != null)
+            {
+                foreach (var btn in buttonsList)
+                        btn.IsEnabled = true;
+            }
+
+            //clearButton6.IsEnabled = true;
+            //clearButton5.IsEnabled = true;
+            //whitebtn6.IsEnabled = true;
+            //whitebtn5.IsEnabled = true;
+            //whitebtn4.IsEnabled = true;
+            //whitebtn3.IsEnabled = true;
+            //graybtn6.IsEnabled = true;
+            //graybtn5.IsEnabled = true;
+            //graybtn4.IsEnabled = true;
+            //graybtn3.IsEnabled = true;
+            //purplebtn6.IsEnabled = true;
+            //purplebtn5.IsEnabled = true;
+            //purplebtn4.IsEnabled = true;
+            //purplebtn3.IsEnabled = true;
+            //
+            //lbluebtn6.IsEnabled = true;
+            //lbluebtn5.IsEnabled = true;
+            //lbluebtn4.IsEnabled = true;
+            //lbluebtn3.IsEnabled = true;
+            //
+            //greenbtn6.IsEnabled = true;
+            //greenbtn5.IsEnabled = true;
+            //greenbtn4.IsEnabled = true;
+            //greenbtn3.IsEnabled = true;
+            //
+            //yellowbtn6.IsEnabled = true;
+            //yellowbtn5.IsEnabled = true;
+            //yellowbtn4.IsEnabled = true;
+            //
+            //orangebtn6.IsEnabled = true;
+            //orangebtn5.IsEnabled = true;
+            //orangebtn4.IsEnabled = true;
+            //
+            //redbtn6.IsEnabled = true;
+            //redbtn5.IsEnabled = true;
+            //
+            //brownbtn6.IsEnabled = true;
+            //brownbtn5.IsEnabled = true;
+            //
+            //blackbtn6.IsEnabled = true;
+            //blackbtn5.IsEnabled = true;
+            //blackbtn4.IsEnabled = true;
+            //
+            //goldbtn5.IsEnabled = true;
+            //
+            //silvbtn5.IsEnabled = true;
+        }
+        private void unDotButtons(int col)
+        {
+            if (buttonsList != null)
+            {
+                foreach (var btn in buttonsList) {
+                    if (btn.Name.Contains(col.ToString()))
+                    {
+                        btn.Content = null;
+                    }
+                }
+            }
+
+            //switch (col)
+            //{
+            //    case 1:
+            //        whitebtn1.Content = null;
+            //        graybtn1.Content = null;
+            //        purplebtn1.Content = null;
+            //        lbluebtn1.Content = null;
+            //        greenbtn1.Content = null;
+            //        yellowbtn1.Content = null;
+            //        orangebtn1.Content = null;
+            //        redbtn1.Content = null;
+            //        brownbtn1.Content = null;
+            //        break;
+            //    case 2:
+            //        whitebtn2.Content = null;
+            //        graybtn2.Content = null;
+            //        purplebtn2.Content = null;
+            //        lbluebtn2.Content = null;
+            //        greenbtn2.Content = null;
+            //        yellowbtn2.Content = null;
+            //        orangebtn2.Content = null;
+            //        redbtn2.Content = null;
+            //        brownbtn2.Content = null;
+            //        blackbtn2.Content = null;
+            //        break;
+            //    case 3:
+            //        whitebtn3.Content = null;
+            //        graybtn3.Content = null;
+            //        purplebtn3.Content = null;
+            //        lbluebtn3.Content = null;
+            //        greenbtn3.Content = null;
+            //        yellowbtn3.Content = null;
+            //        orangebtn3.Content = null;
+            //        redbtn3.Content = null;
+            //        brownbtn3.Content = null;
+            //        blackbtn3.Content = null;
+            //        goldbtn3.Content = null;
+            //        silvbtn3.Content = null;
+            //        break;
+            //    case 4:
+            //        whitebtn4.Content = null;
+            //        graybtn4.Content = null;
+            //        purplebtn4.Content = null;
+            //        lbluebtn4.Content = null;
+            //        greenbtn4.Content = null;
+            //        yellowbtn4.Content = null;
+            //        orangebtn4.Content = null;
+            //        redbtn4.Content = null;
+            //        brownbtn4.Content = null;
+            //        blackbtn4.Content = null;
+            //        goldbtn4.Content = null;
+            //        silvbtn4.Content = null;
+            //        break;
+            //    case 5:
+            //        whitebtn5.Content = null;
+            //        graybtn5.Content = null;
+            //        purplebtn5.Content = null;
+            //        lbluebtn5.Content = null;
+            //        greenbtn5.Content = null;
+            //        yellowbtn5.Content = null;
+            //        orangebtn5.Content = null;
+            //        redbtn5.Content = null;
+            //        brownbtn5.Content = null;
+            //        blackbtn5.Content = null;
+            //        goldbtn5.Content = null;
+            //        silvbtn5.Content = null;
+            //        break;
+            //    case 6:
+            //        whitebtn6.Content = null;
+            //        graybtn6.Content = null;
+            //        purplebtn6.Content = null;
+            //        lbluebtn6.Content = null;
+            //        greenbtn6.Content = null;
+            //        yellowbtn6.Content = null;
+            //        orangebtn6.Content = null;
+            //        redbtn6.Content = null;
+            //        brownbtn6.Content = null;
+            //        blackbtn6.Content = null;
+            //        goldbtn6.Content = null;
+            //        silvbtn6.Content = null;
+            //        break;
+            //}
+        }
+        private void clearFields()
+        {
+            toleranceLabel.Content = "±%";
+            ohmQuantityLabel.Content = null;
+            ohmsLabel.Content = null;
+        }
+        private void dotButton(Button btn) => btn.Content = "•";
     }
 }
