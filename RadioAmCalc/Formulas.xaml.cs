@@ -60,6 +60,26 @@ namespace RadioAmCalc
             }
 
         }
+
+       private void RadioButton_Checked(object sender, RoutedEventArgs e) 
+        {
+            if (sender == radioButton1 && radioButton1.IsChecked == true)
+            {
+                ImageN4.Visibility = Visibility.Visible;
+                    ImageV4.Visibility = Visibility.Hidden;
+                Label1.Visibility = Visibility.Visible;
+                    Label2.Visibility = Visibility.Hidden;
+            }
+            else if (sender == radioButton2 && radioButton2.IsChecked == true)
+            {
+                ImageV4.Visibility = Visibility.Visible;
+                    ImageN4.Visibility = Visibility.Hidden;
+                Label2.Visibility = Visibility.Visible;
+                    Label1.Visibility = Visibility.Hidden;
+            }
+        }
+        
+
     }
 }   
 
