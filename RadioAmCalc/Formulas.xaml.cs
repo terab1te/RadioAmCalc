@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using TabControl = System.Windows.Controls.TabControl;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace RadioAmCalc
 {
@@ -43,5 +45,24 @@ namespace RadioAmCalc
             }
             return parent as TabControl;
         }
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<TextBox> textBoxes = new List<TextBox>() { textBox1, textBox2, textBox3, textBox4 };
+
+            List<TextBox> filledTextBoxes = textBoxes.Where(tb => !string.IsNullOrEmpty(tb.Text)).ToList();
+
+            if (filledTextBoxes.Count > 2)
+            {
+                for (int i = 0; i < filledTextBoxes.Count; i++)
+                {
+                        filledTextBoxes[i].Text = string.Empty;
+                }
+            }
+
+        }
     }
-}
+}   
+
+
+
+
