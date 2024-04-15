@@ -123,6 +123,8 @@ namespace RadioAmCalc
             };
         }
 
+        double ohms;
+
         public void CloseTab(object sender, RoutedEventArgs e)
         {
             TabControl parentTabControl = FindParentTabControl(this);
@@ -268,11 +270,20 @@ namespace RadioAmCalc
                         break;
                     case "clearButton2":
                         unDotButtons(2);
-                        
-                        clearButton2.Opacity = 1;
+                        if (ohmQuantityLabel.Content != null)
+                        {
+                            char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
+                            if (charArray.Length > 1)
+                            {
+                                charArray[1] = ' ';
+                                ohmQuantityLabel.Content = new string(charArray);
+                            }
+                        }
+                            clearButton2.Opacity = 1;
                         break;
                     case "clearButton3":
                         unDotButtons(3);
+                        ohmsLabel.Content = "";
                         clearButton3.Opacity = 1;
                         break;
                     case "clearButton4":
@@ -415,38 +426,135 @@ namespace RadioAmCalc
                             markingColor("1", 2, brownbtn2);
                             clearButton2.Opacity = unfocusOpacity;
                             break;
+                        case "blackbtn2":
+                            markingColor("0", 2, blackbtn2);
+                            clearButton2.Opacity = unfocusOpacity;
+                            break;
+                        //
+                        case "whitebtn3":
+                            markingColor("GΩ", 3, whitebtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "graybtn3":
+                            markingColor("GΩ", 3, graybtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "purplebtn3":
+                            markingColor("MΩ", 3, purplebtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "lbluebtn3":
+                            markingColor("MΩ", 3, lbluebtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "greenbtn3":
+                            markingColor("MΩ", 3, greenbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "yellowbtn3":
+                            markingColor("kΩ", 3, yellowbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "orangebtn3":
+                            markingColor("kΩ", 3, orangebtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "redbtn3":
+                            markingColor("kΩ", 3, redbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "brownbtn3":
+                            markingColor("Ω", 3, brownbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "blackbtn3":
+                            markingColor("Ω", 3, blackbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "goldbtn3":
+                            markingColor("Ω", 3, goldbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
+                        case "silvbtn3":
+                            markingColor("Ω", 3, silvbtn3);
+                            clearButton3.Opacity = unfocusOpacity;
+                            break;
                     }
                 }
             }
         }
         private void markingColor(string content, int col, Button btn)
         {
+            bool fifthEnabled = false;
             switch (col)
             {
                 case 1:
-                    if (ohmQuantityLabel.Content.ToString().Length >= 2) {
+                    unDotButtons(2);
+                    changeChar(resCodeLabel,0,content);
+                    toleranceLabel.Content = "±20%";
+                    if (ohmQuantityLabel.Content != null) {
                         char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
-                        charArray[0] = Convert.ToChar(content);
-                        ohmQuantityLabel.Content = new string(charArray);
+                            charArray[0] = Convert.ToChar(content);
+                            ohmQuantityLabel.Content = new string(charArray);
                     }
-                    else if (ohmQuantityLabel.Content.ToString().Length == 1) ohmQuantityLabel.Content = content;
+                    else ohmQuantityLabel.Content = content;
+                    ohms = Convert.ToDouble(ohmQuantityLabel.Content);
                     break;
                 case 2:
-                        ohmQuantityLabel.Content += content;
+                    toleranceLabel.Content = "±20%";
+                    changeChar(resCodeLabel, 1, content);
+                    if (ohmQuantityLabel.Content != null)
+                    {
+                        char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
+                        if (charArray.Length > 1)
+                        {
+                            charArray[1] = Convert.ToChar(content);
+                            ohmQuantityLabel.Content = new string(charArray);
+                        }
+                        else ohmQuantityLabel.Content += content;
+                        ohms = Convert.ToDouble(ohmQuantityLabel.Content);
+                    }
                     break;
                 case 3:
+                    if (!fifthEnabled) {
+                        ohmsLabel.Content = content;
+                        toleranceLabel.Content = "±20%";
+                        switch(btn.Name)
+                        {
+                            case "graybtn3":
+                            case "greenbtn3":
+                            case "redbtn3":
+                            case "goldbtn3":
+                                ohmQuantityLabel.Content = Convert.ToString(ohms * 0.10);
+                                break;
+                            case "purplebtn3":
+                            case "yellowbtn3":
+                            case "brownbtn3":
+                                ohmQuantityLabel.Content = Convert.ToString(ohms * 10);
+                                break;
+                            case "silvbtn3":
+                                ohmQuantityLabel.Content = Convert.ToString(ohms * 0.01);
+                                break;
+                            default:
+                                ohmQuantityLabel.Content = Convert.ToString(ohms);
+                                break;
+                        }
+                    }
+                    else { }
                     break;
                 case 4:
                     break;
                 case 5:
+                    fifthEnabled = true;
                     blackbtn3.IsEnabled = false;
                     goldbtn3.IsEnabled = false;
                     silvbtn3.IsEnabled = false;
-
                     blackbtn4.IsEnabled = true;
                     orangebtn4.IsEnabled = true;
                     yellowbtn4.IsEnabled = true;
                     toleranceLabel.Content = content;
+                    break;
+                default:
                     break;
             }
             unDotButtons(col);
@@ -471,6 +579,12 @@ namespace RadioAmCalc
                     }
                 }
             }
+        }
+        private void changeChar(System.Windows.Controls.Label label, int index, string content)
+        {
+            char[] charArray = label.Content.ToString().ToCharArray();
+            charArray[index] = Convert.ToChar(content);
+            label.Content = new string(charArray);
         }
         private void clearFields()
         {

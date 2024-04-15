@@ -21,7 +21,7 @@
                 <RadioButton GroupName="choose" Content="Дросель" Height="17" Width="102" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="throttleCheck" Checked="throttle_Checked"/>
             </Viewbox>
         </StackPanel>
-        <Label Content="0000" HorizontalAlignment="Left" Margin="409,35,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="0000" HorizontalAlignment="Left" Margin="409,35,0,0" VerticalAlignment="Top" FontSize="16" x:Name="resCodeLabel"/>
         <Image Margin="300,57,0,0" Source="/img/resistor.png" Stretch="Fill" x:Name="resistor" HorizontalAlignment="Left" Width="250" MaxWidth="250" MaxHeight="55" Height="98" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top">
 
             <Image.Effect>
