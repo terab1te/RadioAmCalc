@@ -10,10 +10,11 @@
     <Grid Background="#FFC7C7C7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="117*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="42*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        <Menu Height="20" VerticalAlignment="Top" Grid.ColumnSpan="3">
+        <Menu Height="20" VerticalAlignment="Top" Grid.ColumnSpan="4">
             <MenuItem Header="Файл" BorderThickness="0,0,0,0" Height="20">
                 <MenuItem Header="Вихід" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Exit"/>
             </MenuItem>
@@ -25,7 +26,7 @@
                 <MenuItem Header="Про програму" Click="aboutAppOpen"/>
             </MenuItem>
         </Menu>
-        <TabControl Margin="0,20,0,25" x:Name="tabControl" Grid.ColumnSpan="3" SelectionChanged="TabControl_SelectionChanged" >
+        <TabControl Margin="0,20,0,25" x:Name="tabControl" Grid.ColumnSpan="4" SelectionChanged="TabControl_SelectionChanged" >
             <TabItem Header="Про програму" x:Name="aboutApp" Height="20" MaxHeight="20">
                 <Grid Background="#FFE2E2E2" Height="493" Width="894">
                     <Button Content="Вийти" HorizontalAlignment="Left" Height="35" Margin="10,0,0,30" Width="120" Click="Exit" VerticalAlignment="Bottom"/>
@@ -33,7 +34,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <TextBlock x:Name="infoBox" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="  Почніть розрахунки" VerticalAlignment="Bottom" Width="900" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="infoBox" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="  Почніть розрахунки" VerticalAlignment="Bottom" Width="900" Grid.ColumnSpan="4"/>
 
     </Grid>
 </Window>

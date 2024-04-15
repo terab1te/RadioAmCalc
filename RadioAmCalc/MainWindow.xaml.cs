@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
 using TabControl = System.Windows.Controls.TabControl;
+using TabItem = System.Windows.Controls.TabItem;
 
 namespace RadioAmCalc
 {
@@ -59,23 +60,26 @@ namespace RadioAmCalc
         // Переход на вкладку Про Програму
         private void aboutAppOpen(object sender, RoutedEventArgs e) => tabControl.SelectedItem = aboutApp;
 
-        void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TabItem selected = tabControl.SelectedItem as TabItem;
-            switch(selected.Name)
+            if (tabControl.SelectedItem is TabItem selected)
             {
-                case "aboutApp":
-                    infoBox.Text = "  Почніть розрахунки";
-                    break;
-                case "resMarkingTab":
-                    infoBox.Text = "  Введіть колір ліній в любому порядку або введіть значення SMD-резистора.";
-                    break;
-                case "filtersTab":
-                    infoBox.Text = "Виберіть фільтр. Введіть початкові значення.";
-                    break;
-                default:
-                    break;
+                switch (selected.Name)
+                {
+                    case "aboutApp":
+                        infoBox.Text = "  Почніть розрахунки";
+                        break;
+                    case "resMarkingTab":
+                        infoBox.Text = "  Введіть колір ліній в любому порядку або введіть значення SMD-резистора.";
+                        break;
+                    case "filtersTab":
+                        infoBox.Text = "Виберіть фільтр. Введіть початкові значення.";
+                        break;
+                    default:
+                        break;
+                }
             }
         }
+
     }
 }
