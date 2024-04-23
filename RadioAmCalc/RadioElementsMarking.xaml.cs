@@ -265,8 +265,10 @@ namespace RadioAmCalc
                 {
                     case "clearButton1":
                         unDotButtons(1);
+                        unDotButtons(2);
                         ohmQuantityLabel.Content = null;
                         clearButton1.Opacity = 1;
+                        clearButton2.Opacity = 1;
                         break;
                     case "clearButton2":
                         unDotButtons(2);
@@ -277,6 +279,7 @@ namespace RadioAmCalc
                             {
                                 charArray[1] = ' ';
                                 ohmQuantityLabel.Content = new string(charArray);
+                                ohms = Convert.ToDouble(ohmQuantityLabel.Content);
                             }
                         }
                             clearButton2.Opacity = 1;
@@ -506,12 +509,16 @@ namespace RadioAmCalc
                     if (ohmQuantityLabel.Content != null)
                     {
                         char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
-                        if (charArray.Length > 1)
+                        if (charArray.Length > 1 && Convert.ToInt32(ohmQuantityLabel.Content) == Convert.ToDouble(ohmQuantityLabel.Content))
                         {
                             charArray[1] = Convert.ToChar(content);
                             ohmQuantityLabel.Content = new string(charArray);
                         }
-                        else ohmQuantityLabel.Content += content;
+                        else if (charArray.Length > 1 && Convert.ToInt32(ohmQuantityLabel.Content) != Convert.ToDouble(ohmQuantityLabel.Content))
+                        {
+                            ohmQuantityLabel.Content = Convert.ToString(Math.Floor(Convert.ToDouble(ohmQuantityLabel.Content)) + Convert.ToDouble(content));
+                        }
+                        else if (charArray.Length <= 1) ohmQuantityLabel.Content += content;
                         ohms = Convert.ToDouble(ohmQuantityLabel.Content);
                     }
                     break;
@@ -558,7 +565,7 @@ namespace RadioAmCalc
                     break;
             }
             unDotButtons(col);
-            dotButton(btn);
+            btn.Content = "•";
         }
         private void enableAllColors()
         {
@@ -574,9 +581,7 @@ namespace RadioAmCalc
             {
                 foreach (var btn in buttonsList) {
                     if (btn.Name.Contains(col.ToString()))
-                    {
                         btn.Content = null;
-                    }
                 }
             }
         }
@@ -592,6 +597,5 @@ namespace RadioAmCalc
             ohmQuantityLabel.Content = null;
             ohmsLabel.Content = null;
         }
-        private void dotButton(Button btn) => btn.Content = "•";
     }
 }
