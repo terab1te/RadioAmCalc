@@ -22,12 +22,19 @@
             </Viewbox>
         </StackPanel>
         <Label Content="0000" HorizontalAlignment="Left" Margin="409,35,0,0" VerticalAlignment="Top" FontSize="16" x:Name="resCodeLabel"/>
-        <Image Margin="300,57,0,0" Source="/img/resistor.png" Stretch="Fill" x:Name="resistor" HorizontalAlignment="Left" Width="250" MaxWidth="250" MaxHeight="55" Height="98" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top">
+        <Image Margin="300,56,0,0" Source="/img/resistor.png" Stretch="Fill" x:Name="resistor" HorizontalAlignment="Left" Width="250" MaxWidth="250" MaxHeight="55" Height="98" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top">
 
             <Image.Effect>
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
+        <!-- Marking -->
+        <Rectangle HorizontalAlignment="Left" Height="38" Margin="393,63.5,0,0" VerticalAlignment="Top" Width="6" RadiusX="0.688" RadiusY="0.688" x:Name="firstLine"/>
+        <Rectangle HorizontalAlignment="Left" Height="31" Margin="411,67,0,0" VerticalAlignment="Top" Width="6" RadiusX="0.688" RadiusY="0.688" x:Name="secondLine"/>
+        <Rectangle HorizontalAlignment="Left" Height="31" Margin="422,67,0,0" VerticalAlignment="Top" Width="6" RadiusX="0.688" RadiusY="0.688" x:Name="thirdLine"/>
+        <Rectangle HorizontalAlignment="Left" Height="31" Margin="433,67,0,0" VerticalAlignment="Top" Width="6" RadiusX="0.688" RadiusY="0.688" x:Name="fouthLine"/>
+        <Rectangle HorizontalAlignment="Center" Height="31" Margin="0,67,0,0" VerticalAlignment="Top" Width="6"  RadiusX="0.688" RadiusY="0.688" x:Name="fifthLine"/>
+        <Rectangle HorizontalAlignment="Left" Height="38.7" Margin="462,62.8,0,0" VerticalAlignment="Top" Width="6"  RadiusX="0.688" RadiusY="0.688" x:Name="sixthLine"/>
         <!--Display-->
         <Image Margin="616,15,40,295" Source="/img/display.png" Stretch="Fill"/>
         <Label Style="{StaticResource DigitalFont}" FontSize="48" Content="0" HorizontalAlignment="Right" Height="67" Margin="0,57,127,0" VerticalAlignment="Top" Width="125" Foreground="Black" Padding="10,0,0,5" x:Name="ohmQuantityLabel"/>
@@ -186,6 +193,8 @@
             <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn1" Click="markingColorClick" Content="" Padding="0,0,0,0" FontSize="11" FontFamily="Cascadia Code SemiBold"/>
 
         </Grid>
+        
+
 
 
 

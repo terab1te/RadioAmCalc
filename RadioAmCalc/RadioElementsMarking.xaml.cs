@@ -28,6 +28,7 @@ namespace RadioAmCalc
         public RadioElementsMarking()
         {
             InitializeComponent();
+
             resistorCheck.IsChecked = true;
             buttonsList = new List<Button>() {
             clearButton1,
@@ -141,6 +142,7 @@ namespace RadioAmCalc
             return parent as TabControl;
         }
 
+        // Resistor CheckBox Check
         private void Resistor_Checked(object sender, RoutedEventArgs e)
         {
             enableAllColors();
@@ -181,6 +183,7 @@ namespace RadioAmCalc
             silvbtn1.IsEnabled = false;
         }
 
+        // Capacitor CheckBox Check
         private void Capacitor_Checked(object sender, RoutedEventArgs e)
         {
             clearFields();
@@ -198,6 +201,8 @@ namespace RadioAmCalc
             silvbtn2.IsEnabled = false;
             silvbtn1.IsEnabled = false;
         }
+
+        // Throttle CheckBox Check
         private void throttle_Checked(object sender, RoutedEventArgs e)
         {
             clearFields();
@@ -255,6 +260,7 @@ namespace RadioAmCalc
             goldbtn2.IsEnabled = false;
             goldbtn6.IsEnabled = false;
         }
+
         //Clear buttons
         private void clearButtonsClick(object sender, RoutedEventArgs e)
         {
@@ -269,29 +275,28 @@ namespace RadioAmCalc
                         ohmQuantityLabel.Content = null;
                         clearButton1.Opacity = 1;
                         clearButton2.Opacity = 1;
+                        firstLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
+
+                        changeChar(resCodeLabel, 0, "0");
                         break;
                     case "clearButton2":
                         unDotButtons(2);
-                        if (ohmQuantityLabel.Content != null)
-                        {
-                            char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
-                            if (charArray.Length > 1)
-                            {
-                                charArray[1] = ' ';
-                                ohmQuantityLabel.Content = new string(charArray);
-                                ohms = Convert.ToDouble(ohmQuantityLabel.Content);
-                            }
-                        }
-                            clearButton2.Opacity = 1;
+                        changeChar(resCodeLabel, 1, "0");
+                        clearButton2.Opacity = 1;
+                        secondLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton3":
                         unDotButtons(3);
                         ohmsLabel.Content = "";
                         clearButton3.Opacity = 1;
+                        changeChar(resCodeLabel, 2, "0");
+                        thirdLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton4":
                         unDotButtons(4);
                         clearButton4.Opacity = 1;
+                        changeChar(resCodeLabel, 3, "0");
+                        fouthLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton5":
                         unDotButtons(5);
@@ -304,14 +309,19 @@ namespace RadioAmCalc
                         blackbtn4.IsEnabled = false;
                         orangebtn4.IsEnabled = false;
                         yellowbtn4.IsEnabled = false;
+                        changeChar(resCodeLabel, 4, "0");
+                        fifthLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton6":
                         unDotButtons(6);
                         clearButton6.Opacity = 1;
+                        sixthLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                 }
             }
         }
+
+        // Main marking void
         private void markingColorClick(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -488,12 +498,13 @@ namespace RadioAmCalc
         }
         private void markingColor(string content, int col, Button btn)
         {
+            
             bool fifthEnabled = false;
             switch (col)
             {
                 case 1:
                     unDotButtons(2);
-                    changeChar(resCodeLabel,0,content);
+                    changeChar(resCodeLabel, 0, content);
                     toleranceLabel.Content = "±20%";
                     if (ohmQuantityLabel.Content != null) {
                         char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
@@ -502,6 +513,7 @@ namespace RadioAmCalc
                     }
                     else ohmQuantityLabel.Content = content;
                     ohms = Convert.ToDouble(ohmQuantityLabel.Content);
+                    firstLine.Fill = btn.Background;
                     break;
                 case 2:
                     toleranceLabel.Content = "±20%";
@@ -521,9 +533,11 @@ namespace RadioAmCalc
                         else if (charArray.Length <= 1) ohmQuantityLabel.Content += content;
                         ohms = Convert.ToDouble(ohmQuantityLabel.Content);
                     }
+                    secondLine.Fill = btn.Background;
                     break;
                 case 3:
                     if (!fifthEnabled) {
+                        
                         ohmsLabel.Content = content;
                         toleranceLabel.Content = "±20%";
                         switch(btn.Name)
@@ -548,6 +562,7 @@ namespace RadioAmCalc
                         }
                     }
                     else { }
+                    thirdLine.Fill = btn.Background;
                     break;
                 case 4:
                     break;
@@ -560,12 +575,14 @@ namespace RadioAmCalc
                     orangebtn4.IsEnabled = true;
                     yellowbtn4.IsEnabled = true;
                     toleranceLabel.Content = content;
+                    fifthLine.Fill = btn.Background;
                     break;
                 default:
                     break;
             }
             unDotButtons(col);
             btn.Content = "•";
+
         }
         private void enableAllColors()
         {
