@@ -21,7 +21,7 @@
                 <RadioButton GroupName="choose" Content="Дросель" Height="17" Width="102" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="throttleCheck" Checked="throttle_Checked"/>
             </Viewbox>
         </StackPanel>
-        <Label Content="0000" HorizontalAlignment="Left" Margin="409,35,0,0" VerticalAlignment="Top" FontSize="16" x:Name="resCodeLabel"/>
+        <Label Content="000" HorizontalAlignment="Left" Margin="409,35,0,0" VerticalAlignment="Top" FontSize="16" x:Name="resCodeLabel" Visibility="Hidden"/>
         <Image Margin="300,56,0,0" Source="/img/resistor.png" Stretch="Fill" x:Name="resistor" HorizontalAlignment="Left" Width="250" MaxWidth="250" MaxHeight="55" Height="98" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top">
 
             <Image.Effect>
@@ -37,7 +37,7 @@
         <Rectangle HorizontalAlignment="Left" Height="38.7" Margin="462,62.8,0,0" VerticalAlignment="Top" Width="6"  RadiusX="0.688" RadiusY="0.688" x:Name="sixthLine"/>
         <!--Display-->
         <Image Margin="616,15,40,295" Source="/img/display.png" Stretch="Fill"/>
-        <Label Style="{StaticResource DigitalFont}" FontSize="48" Content="0" HorizontalAlignment="Right" Height="67" Margin="0,57,127,0" VerticalAlignment="Top" Width="125" Foreground="Black" Padding="10,0,0,5" x:Name="ohmQuantityLabel"/>
+        <Label Style="{StaticResource DigitalFont}" FontSize="48" Content="0" HorizontalAlignment="Right" Height="67" Margin="0,57,108,0" VerticalAlignment="Top" Width="144" Foreground="Black" Padding="10,0,0,5" x:Name="ohmQuantityLabel"/>
         <Label FontSize="24" Content="kΩ" HorizontalAlignment="Right" Height="34" Margin="0,57,66,0" VerticalAlignment="Top" Width="61" Foreground="Black" HorizontalContentAlignment="Right" Padding="0,0,10,0" FontFamily="Trebuchet MS" RenderTransformOrigin="0.5,0.5" BorderThickness="0,5,0,0" x:Name="ohmsLabel"/>
         <Label FontSize="16" Content="±%" HorizontalAlignment="Right" Height="33" Margin="0,91,66,0" VerticalAlignment="Top" Width="84" Foreground="Black" HorizontalContentAlignment="Right" Padding="0,0,10,0" FontFamily="Yu Gothic UI Semibold" RenderTransformOrigin="0.5,0.5" x:Name="toleranceLabel"/>
 
@@ -193,7 +193,7 @@
             <Button HorizontalAlignment="Right" Height="15" Margin="0,0,210,270" VerticalAlignment="Bottom" Width="15" Background="#DCEAED" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="silvbtn1" Click="markingColorClick" Content="" Padding="0,0,0,0" FontSize="11" FontFamily="Cascadia Code SemiBold"/>
 
         </Grid>
-        
+
 
 
 

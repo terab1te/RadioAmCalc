@@ -26,7 +26,11 @@ namespace RadioAmCalc
     /// </summary>
     public partial class RadioElementsMarking : Page
     {
-        public List<Button> buttonsList;
+        RoutedEventArgs args = new RoutedEventArgs();
+        List<Button> buttonsList;
+        bool fifthEnabled = false;
+        bool fourthEnabled = false;
+        bool toleranceChoosed = false;
         public RadioElementsMarking()
         {
             InitializeComponent();
@@ -278,12 +282,12 @@ namespace RadioAmCalc
                         clearButton1.Opacity = 1;
                         clearButton2.Opacity = 1;
                         firstLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
-
-                        changeChar(resCodeLabel, 0, "0");
+                        toleranceLabel.Content = "±%";
+                        //changeChar(resCodeLabel, 0, "0");
                         break;
                     case "clearButton2":
                         unDotButtons(2);
-                        changeChar(resCodeLabel, 1, "0");
+                        //changeChar(resCodeLabel, 1, "0");
                         clearButton2.Opacity = 1;
                         secondLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
@@ -291,17 +295,23 @@ namespace RadioAmCalc
                         unDotButtons(3);
                         ohmsLabel.Content = "";
                         clearButton3.Opacity = 1;
-                        changeChar(resCodeLabel, 2, "0");
+                        //changeChar(resCodeLabel, 2, "0");
                         thirdLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton4":
                         unDotButtons(4);
                         clearButton4.Opacity = 1;
-                        changeChar(resCodeLabel, 3, "0");
+                        if (!fifthEnabled)
+                            toleranceLabel.Content = "±20%";
+                        //changeChar(resCodeLabel, 3, "0");
                         fouthLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton5":
+                        if (blackbtn4.Content == "•" || orangebtn4.Content == "•" || yellowbtn4.Content == "•")
+                            clearButtonsClick(clearButton4, args);
+
                         unDotButtons(5);
+                        fifthEnabled = false;
                         toleranceLabel.Content = "±%";
                         clearButton5.Opacity = 1;
                         blackbtn3.IsEnabled = true;
@@ -311,7 +321,7 @@ namespace RadioAmCalc
                         blackbtn4.IsEnabled = false;
                         orangebtn4.IsEnabled = false;
                         yellowbtn4.IsEnabled = false;
-                        changeChar(resCodeLabel, 4, "0");
+                        //changeChar(resCodeLabel, 4, "0");
                         fifthLine.Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0));
                         break;
                     case "clearButton6":
@@ -494,20 +504,64 @@ namespace RadioAmCalc
                             markingColor("Ω", 3, silvbtn3);
                             clearButton3.Opacity = unfocusOpacity;
                             break;
+                        //
+                        case "graybtn4":
+                            markingColor("±0.05%", 4, graybtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "purplebtn4":
+                            markingColor("±0.1%", 4, purplebtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "lbluebtn4":
+                            markingColor("±0.25%", 4, lbluebtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "greenbtn4":
+                            markingColor("±0.5%", 4, greenbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "yellowbtn4":
+                            markingColor("", 4, yellowbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "orangebtn4":
+                            markingColor("", 4, orangebtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "redbtn4":
+                            markingColor("±2%", 4, redbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "brownbtn4":
+                            markingColor("±1%", 4, brownbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "blackbtn4":
+                            markingColor("", 4, blackbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "goldbtn4":
+                            markingColor("±5%", 4, goldbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
+                        case "silvbtn4":
+                            markingColor("±10%", 4, silvbtn4);
+                            clearButton4.Opacity = unfocusOpacity;
+                            break;
                     }
                 }
             }
         }
         private void markingColor(string content, int col, Button btn)
         {
-            
-            bool fifthEnabled = false;
             switch (col)
             {
                 case 1:
                     unDotButtons(2);
-                    changeChar(resCodeLabel, 0, content);
-                    toleranceLabel.Content = "±20%";
+                    //changeChar(resCodeLabel, 0, content);
+                    if(!toleranceChoosed)
+                        toleranceLabel.Content = "±20%";
                     if (ohmQuantityLabel.Content != null) {
                         char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
                             charArray[0] = Convert.ToChar(content);
@@ -518,8 +572,9 @@ namespace RadioAmCalc
                     firstLine.Fill = btn.Background;
                     break;
                 case 2:
-                    toleranceLabel.Content = "±20%";
-                    changeChar(resCodeLabel, 1, content);
+                    if (!toleranceChoosed)
+                        toleranceLabel.Content = "±20%";
+                    //changeChar(resCodeLabel, 1, content);
                     if (ohmQuantityLabel.Content != null)
                     {
                         bool isNumeric = int.TryParse(ohmQuantityLabel.Content.ToString(), out int number);
@@ -538,8 +593,8 @@ namespace RadioAmCalc
                             else if (charArray.Length <= 1) ohmQuantityLabel.Content += content;
                             
                         }
-                        else
-                            changeChar(ohmQuantityLabel, 2, content);
+                        else { }
+                            //changeChar(ohmQuantityLabel, 2, content);
                         ohms = Convert.ToDouble(ohmQuantityLabel.Content);
                     }
                     secondLine.Fill = btn.Background;
@@ -554,49 +609,64 @@ namespace RadioAmCalc
                         switch (btn.Name)
                         {
                             case "graybtn3":
-                                changeChar(resCodeLabel, 2, "8");
-                                break;
+                                //changeChar(resCodeLabel, 2, "8");
                             case "greenbtn3":
-                                changeChar(resCodeLabel, 2, "5");
-                                break;
+                                //changeChar(resCodeLabel, 2, "5");
                             case "redbtn3":
-                                changeChar(resCodeLabel, 2, "2");
-                                break;
+                                //changeChar(resCodeLabel, 2, "2");
                             case "goldbtn3":
-                                changeChar(resCodeLabel, 2, "8");
-                                
-                                string str = (ohms * 0.10).ToString("G",
-                                CultureInfo.CreateSpecificCulture("sv-SE"));
-                                ohmQuantityLabel.Content = str;
+                                ohmQuantityLabel.Content = (ohms * 0.10).ToString("F2");
                                 break;
                             case "purplebtn3":
+                                //changeChar(resCodeLabel, 2, "7");
                             case "yellowbtn3":
+                                //changeChar(resCodeLabel, 2, "4");
                             case "brownbtn3":
-                                ohmQuantityLabel.Content = Convert.ToString(ohms * 10);
+                                //changeChar(resCodeLabel, 2, "1");
+                                ohmQuantityLabel.Content = (ohms * 10).ToString();
                                 break;
                             case "silvbtn3":
-                                ohmQuantityLabel.Content = Convert.ToString(ohms * 0.01);
+                                ohmQuantityLabel.Content = (ohms * 0.01).ToString("F2");
                                 break;
                             default:
-                                ohmQuantityLabel.Content = Convert.ToString(ohms);
+                                ohmQuantityLabel.Content = ohms.ToString();
                                 break;
                         }
                     }
-                    else { }
+                    //else {
+                    //    switch (btn.Name)
+                    //    {
+                    //    }
+                    //}
                     thirdLine.Fill = btn.Background;
                     break;
                 case 4:
+                    fourthEnabled = true;
+                    if (!fifthEnabled) {
+                        toleranceLabel.Content = content;
+                        toleranceChoosed = true;
+                    }
+                    fouthLine.Fill = btn.Background;
                     break;
                 case 5:
+                    if(blackbtn3.Content == "•" || goldbtn3.Content == "•" || silvbtn3.Content == "•")
+                        clearButtonsClick(clearButton3, args);
+
                     fifthEnabled = true;
+                    toleranceChoosed = true;
+                    clearButtonsClick(clearButton4, args);
+                    //
                     blackbtn3.IsEnabled = false;
                     goldbtn3.IsEnabled = false;
                     silvbtn3.IsEnabled = false;
                     blackbtn4.IsEnabled = true;
                     orangebtn4.IsEnabled = true;
                     yellowbtn4.IsEnabled = true;
+                    //
                     toleranceLabel.Content = content;
                     fifthLine.Fill = btn.Background;
+
+                    
                     break;
                 default:
                     break;
@@ -623,12 +693,12 @@ namespace RadioAmCalc
                 }
             }
         }
-        private void changeChar(System.Windows.Controls.Label label, int index, string content)
-        {
-            char[] charArray = label.Content.ToString().ToCharArray();
-            charArray[index] = Convert.ToChar(content);
-            label.Content = new string(charArray);
-        }
+        //private void changeChar(System.Windows.Controls.Label label, int index, string content)
+        //{
+        //    char[] charArray = label.Content.ToString().ToCharArray();
+        //    charArray[index] = Convert.ToChar(content);
+        //    label.Content = new string(charArray);
+        //}
         private void clearFields()
         {
             toleranceLabel.Content = "±%";
