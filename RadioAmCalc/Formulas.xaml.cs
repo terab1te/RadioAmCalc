@@ -57,7 +57,7 @@ namespace RadioAmCalc
                 {
                         filledTextBoxes[i].Text = string.Empty;
                 }
-            }
+            }         
 
         }
 
