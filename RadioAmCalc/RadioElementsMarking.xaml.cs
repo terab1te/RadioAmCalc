@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
 using TabControl = System.Windows.Controls.TabControl;
 using Button = System.Windows.Controls.Button;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Globalization;
 
 namespace RadioAmCalc
 {
@@ -520,33 +522,52 @@ namespace RadioAmCalc
                     changeChar(resCodeLabel, 1, content);
                     if (ohmQuantityLabel.Content != null)
                     {
-                        char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
-                        if (charArray.Length > 1 && Convert.ToInt32(ohmQuantityLabel.Content) == Convert.ToDouble(ohmQuantityLabel.Content))
+                        bool isNumeric = int.TryParse(ohmQuantityLabel.Content.ToString(), out int number);
+                        if (isNumeric)
                         {
-                            charArray[1] = Convert.ToChar(content);
-                            ohmQuantityLabel.Content = new string(charArray);
+                            char[] charArray = ohmQuantityLabel.Content.ToString().ToCharArray();
+                            if (charArray.Length > 1 && Convert.ToInt32(ohmQuantityLabel.Content) == Convert.ToDouble(ohmQuantityLabel.Content))
+                            {
+                                charArray[1] = Convert.ToChar(content);
+                                ohmQuantityLabel.Content = new string(charArray);
+                            }
+                            else if (charArray.Length > 1 && Convert.ToInt32(ohmQuantityLabel.Content) != Convert.ToDouble(ohmQuantityLabel.Content))
+                            {
+                                ohmQuantityLabel.Content = Convert.ToString(Math.Floor(Convert.ToDouble(ohmQuantityLabel.Content)) + Convert.ToDouble(content));
+                            }
+                            else if (charArray.Length <= 1) ohmQuantityLabel.Content += content;
+                            
                         }
-                        else if (charArray.Length > 1 && Convert.ToInt32(ohmQuantityLabel.Content) != Convert.ToDouble(ohmQuantityLabel.Content))
-                        {
-                            ohmQuantityLabel.Content = Convert.ToString(Math.Floor(Convert.ToDouble(ohmQuantityLabel.Content)) + Convert.ToDouble(content));
-                        }
-                        else if (charArray.Length <= 1) ohmQuantityLabel.Content += content;
+                        else
+                            changeChar(ohmQuantityLabel, 2, content);
                         ohms = Convert.ToDouble(ohmQuantityLabel.Content);
                     }
                     secondLine.Fill = btn.Background;
                     break;
                 case 3:
+                    
                     if (!fifthEnabled) {
                         
                         ohmsLabel.Content = content;
                         toleranceLabel.Content = "±20%";
-                        switch(btn.Name)
+                        
+                        switch (btn.Name)
                         {
                             case "graybtn3":
+                                changeChar(resCodeLabel, 2, "8");
+                                break;
                             case "greenbtn3":
+                                changeChar(resCodeLabel, 2, "5");
+                                break;
                             case "redbtn3":
+                                changeChar(resCodeLabel, 2, "2");
+                                break;
                             case "goldbtn3":
-                                ohmQuantityLabel.Content = Convert.ToString(ohms * 0.10);
+                                changeChar(resCodeLabel, 2, "8");
+                                
+                                string str = (ohms * 0.10).ToString("G",
+                                CultureInfo.CreateSpecificCulture("sv-SE"));
+                                ohmQuantityLabel.Content = str;
                                 break;
                             case "purplebtn3":
                             case "yellowbtn3":

@@ -31,6 +31,8 @@
                 <Grid Background="#FFE2E2E2" Height="493" Width="894">
                     <Button Content="Вийти" HorizontalAlignment="Left" Height="35" Margin="10,0,0,30" Width="120" Click="Exit" VerticalAlignment="Bottom"/>
                     <Image HorizontalAlignment="Left" Height="380" Margin="27,24,0,0" VerticalAlignment="Top" Width="485" Source="\img\calculator.png"/>
+                    <Label Content="Курсова з програмування" HorizontalAlignment="Right" Height="85" Margin="0,64,10,0" VerticalAlignment="Top" Width="355" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
+                    <Label Content="Виконали студенти групи 31-К&#xD;&#xA;Баратинський Ярослав&#xD;&#xA;Сузима Олександр" HorizontalAlignment="Right" Height="139" Margin="0,0,42,0" VerticalAlignment="Bottom" Width="303" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 </Grid>
             </TabItem>
         </TabControl>
