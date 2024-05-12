@@ -82,23 +82,115 @@ namespace RadioAmCalc
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Forms forms = new Forms();
-            fLable.Content = Convert.ToDouble(textBox1.Text) / 1000;
-            String1.Content = (forms.FindL(Convert.ToDouble(textBox1.Text) / 1000, Convert.ToDouble(textBox2.Text)));
-            String2.Content = (forms.FindC(Convert.ToDouble(textBox1.Text), Convert.ToDouble(String1.Content)));
-            String3.Content = Convert.ToDouble(String1.Content) / 2;
-            String4.Content = Convert.ToDouble(String1.Content) / 2;
-            String5.Content = String2.Content;
-            String6.Content = String1.Content;
-            String7.Content = Convert.ToDouble(String2.Content) / 2;
-            String75.Content = String7.Content;
-            String8.Content = forms.FindR(Convert.ToDouble(forms.FindfLC(Convert.ToDouble(String2.Content), Convert.ToDouble(String1.Content))), Convert.ToDouble(String2.Content), Convert.ToDouble(String1.Content));
-            String9.Content = String2.Content;
-            String10.Content = Convert.ToDouble(String8.Content) / 2;
-            String11.Content = Convert.ToDouble(String8.Content) / 2;
-            String12.Content = String2.Content;
-            String13.Content = String8.Content;
-            String14.Content = Convert.ToDouble(String2.Content) / 2;
-            String15.Content = Convert.ToDouble(String2.Content) / 2;
+            if(!string.IsNullOrEmpty(textBox1.Text)) 
+            {
+                fLable.Content = Convert.ToDouble(textBox1.Text) / 1000;
+            }
+            else {
+                fLable.Content = 0;
+            }
+
+        
+
+            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text)) //f/C
+            {
+                String1.Content = forms.FindL(Convert.ToDouble(textBox1.Text)/1000, Convert.ToDouble(textBox2.Text));
+                String2.Content = Convert.ToDouble(textBox2.Text);
+                String3.Content = Convert.ToDouble(String1.Content)/2;
+                String4.Content = Convert.ToDouble(String1.Content) / 2;
+                String5.Content = String2.Content;
+                String6.Content = Convert.ToDouble(String1.Content);
+                String7.Content = Convert.ToDouble(String2.Content) / 2;
+                String75.Content = Convert.ToDouble(String2.Content) / 2;
+                String8.Content = forms.FindR(Convert.ToDouble(fLable.Content), Convert.ToDouble(String2.Content), Convert.ToDouble(String1.Content))/1000;
+                String9.Content = String2.Content;
+                String10.Content = Convert.ToDouble(String8.Content) / 2;
+                String11.Content = Convert.ToDouble(String8.Content) / 2;
+                String12.Content = Convert.ToDouble(String2.Content);
+                String13.Content = Convert.ToDouble(String8.Content);
+                String14.Content = Convert.ToDouble(String2.Content)/2;
+                String15.Content = Convert.ToDouble(String2.Content) / 2;
+
+            } 
+            else if(!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox3.Text))//f/L
+            {
+                String1.Content = Convert.ToDouble(textBox3.Text);
+                String2.Content = forms.FindC(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox3.Text));
+                String3.Content = Convert.ToDouble(String1.Content) / 2;
+                String4.Content = Convert.ToDouble(String1.Content) / 2;
+                String5.Content = String2.Content;
+                String6.Content = Convert.ToDouble(String1.Content);
+                String7.Content = Convert.ToDouble(String2.Content) / 2;
+                String75.Content = Convert.ToDouble(String2.Content) / 2;
+                String8.Content = forms.FindR(Convert.ToDouble(fLable.Content), Convert.ToDouble(String2.Content), Convert.ToDouble(String1.Content)) / 1000;
+                String9.Content = String2.Content;
+                String10.Content = Convert.ToDouble(String8.Content) / 2;
+                String11.Content = Convert.ToDouble(String8.Content) / 2;
+                String12.Content = Convert.ToDouble(String2.Content);
+                String13.Content = Convert.ToDouble(String8.Content);
+                String14.Content = Convert.ToDouble(String2.Content) / 2;
+                String15.Content = Convert.ToDouble(String2.Content) / 2;
+            }
+            else if(!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox4.Text))//f/R
+            {
+                String1.Content = forms.FindL2(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox4.Text));
+                String2.Content = forms.FindC(Convert.ToDouble(textBox1.Text), Convert.ToDouble(String1.Content));
+                String3.Content = Convert.ToDouble(String1.Content) / 2;
+                String4.Content = Convert.ToDouble(String1.Content) / 2;
+                String5.Content = String2.Content;
+                String6.Content = Convert.ToDouble(String1.Content);
+                String7.Content = Convert.ToDouble(String2.Content) / 2;
+                String75.Content = Convert.ToDouble(String2.Content) / 2;
+                String8.Content = textBox4.Text;
+                String9.Content = String2.Content;
+                String10.Content = Convert.ToDouble(String8.Content) / 2;
+                String11.Content = Convert.ToDouble(String8.Content) / 2;
+                String12.Content = Convert.ToDouble(String2.Content);
+                String13.Content = Convert.ToDouble(String8.Content);
+                String14.Content = Convert.ToDouble(String2.Content) / 2;
+                String15.Content = Convert.ToDouble(String2.Content) / 2;
+            }
+            else if (!string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text))//C/L
+            {
+                fLable.Content = forms.FindfLC(Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                String1.Content = textBox3.Text;
+                String2.Content = textBox2.Text;
+                String3.Content = Convert.ToDouble(String1.Content) / 2;
+                String4.Content = Convert.ToDouble(String1.Content) / 2;
+                String5.Content = String2.Content;
+                String6.Content = Convert.ToDouble(String1.Content);
+                String7.Content = Convert.ToDouble(String2.Content) / 2;
+                String75.Content = Convert.ToDouble(String2.Content) / 2;
+                String8.Content = forms.FindR(Convert.ToDouble(fLable.Content), Convert.ToDouble(String2.Content), Convert.ToDouble(String1.Content));
+                String9.Content = String2.Content;
+                String10.Content = Convert.ToDouble(String8.Content) / 2;
+                String11.Content = Convert.ToDouble(String8.Content) / 2;
+                String12.Content = Convert.ToDouble(String2.Content);
+                String13.Content = Convert.ToDouble(String8.Content);
+                String14.Content = Convert.ToDouble(String2.Content) / 2;
+                String15.Content = Convert.ToDouble(String2.Content) / 2;
+            }
+            else if (!string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox4.Text))//C/R
+            {
+                fLable.Content = forms.FindfRC(Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox4.Text));
+                String1.Content = forms.FindL2(Convert.ToDouble(fLable.Content), Convert.ToDouble(textBox4.Text));
+                String2.Content = textBox2.Text;
+                String3.Content = Convert.ToDouble(String1.Content) / 2;
+                String4.Content = Convert.ToDouble(String1.Content) / 2;
+                String5.Content = String2.Content;
+                String6.Content = Convert.ToDouble(String1.Content);
+                String7.Content = Convert.ToDouble(String2.Content) / 2;
+                String75.Content = Convert.ToDouble(String2.Content) / 2;
+                String8.Content = forms.FindR(Convert.ToDouble(fLable.Content), Convert.ToDouble(String2.Content), Convert.ToDouble(String1.Content));
+                String9.Content = String2.Content;
+                String10.Content = Convert.ToDouble(String8.Content) / 2;
+                String11.Content = Convert.ToDouble(String8.Content) / 2;
+                String12.Content = Convert.ToDouble(String2.Content);
+                String13.Content = Convert.ToDouble(String8.Content);
+                String14.Content = Convert.ToDouble(String2.Content) / 2;
+                String15.Content = Convert.ToDouble(String2.Content) / 2;
+
+            }
         }
     }
 }   

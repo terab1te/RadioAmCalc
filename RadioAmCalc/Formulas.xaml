@@ -18,10 +18,10 @@
         <Label Content="C =" HorizontalAlignment="Left" Height="40" Margin="375,61,0,0" VerticalAlignment="Top" Width="44" FontSize="22"/>
         <Label Content="L =" HorizontalAlignment="Left" Height="40" Margin="513,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
         <Label Content="R =" HorizontalAlignment="Left" Height="40" Margin="650,61,0,0" VerticalAlignment="Top" Width="50" FontSize="22"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="22" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="22" Margin="424,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="22" Margin="550,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="22" Margin="690,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="22" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="22" Margin="424,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="22" Margin="550,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="22" Margin="690,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" TextChanged="textBox_TextChanged"/>
         <Label x:Name="Label1" Content="Фільтри нижніх частот (ФНЧ)" HorizontalAlignment="Left" Height="46" Margin="334,9,0,0" VerticalAlignment="Top" Width="336" FontSize="22" Visibility="Hidden"/>
         <Label x:Name="Label2" Content="Фільтри верніх частот (ФВЧ)" HorizontalAlignment="Left" Height="46" Margin="334,9,0,0" VerticalAlignment="Top" Width="336" FontSize="22" Visibility="Hidden"/>
         <Image Margin="15,101,737,307" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ.PNG" Stretch="Fill"/>
@@ -30,53 +30,32 @@
             <Image x:Name="ImageN4" Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\НЧ фільтри.PNG" Margin="0,0,0,15" Grid.RowSpan="9"/>
             <Image x:Name="ImageV4"  Source="C:\Users\User\Source\Repos\RadioAmCalc\RadioAmCalc\img\ВЧ Фільтри.PNG" Margin="0,0,0,15" Visibility="Hidden"/>
 
-            <Label x:Name="String1" Content="Label" HorizontalAlignment="Left" Height="26" Margin="105,134,0,0" VerticalAlignment="Top" Width="41"/>
-            <Label x:Name="String2" Content="Label" HorizontalAlignment="Left" Height="26" Margin="173,180,0,0" VerticalAlignment="Top" Width="41"/>
+            <Label x:Name="String1"  HorizontalAlignment="Left" Height="26" Margin="105,134,0,0" VerticalAlignment="Top" Width="71"/>
+            <Label x:Name="String2"  HorizontalAlignment="Left" Height="26" Margin="173,180,0,0" VerticalAlignment="Top" Width="71"/>
 
-            <Label x:Name="String3" Content="Label" HorizontalAlignment="Left" Height="26" Margin="250,134,0,0" VerticalAlignment="Top" Width="40"/>
-            <Label x:Name="String4" Content="Label" HorizontalAlignment="Left" Height="26" Margin="320,134,0,0" VerticalAlignment="Top" Width="40"/>
-            <Label x:Name="String5" Content="Label" HorizontalAlignment="Left" Height="26" Margin="326,180,0,0" VerticalAlignment="Top" Width="41"/>
+            <Label x:Name="String3" HorizontalAlignment="Left" Height="26" Margin="250,134,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label x:Name="String4" HorizontalAlignment="Left" Height="26" Margin="320,134,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label x:Name="String5" HorizontalAlignment="Left" Height="26" Margin="326,180,0,0" VerticalAlignment="Top" Width="71"/>
 
-            <Label x:Name="String6" Content="Label" HorizontalAlignment="Left" Height="26" Margin="460,134,0,0" VerticalAlignment="Top" Width="40"/>
-            <Label x:Name="String7" Content="Label" HorizontalAlignment="Left" Height="26" Margin="445,180,0,0" VerticalAlignment="Top" Width="41"/>
-            <Label x:Name="String75" Content="Label" HorizontalAlignment="Left" Height="26" Margin="525,180,0,0" VerticalAlignment="Top" Width="41"/>
+            <Label x:Name="String6" HorizontalAlignment="Left" Height="26" Margin="460,134,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label x:Name="String7" HorizontalAlignment="Left" Height="26" Margin="445,180,0,0" VerticalAlignment="Top" Width="71"/>
+            <Label x:Name="String75" HorizontalAlignment="Left" Height="26" Margin="525,180,0,0" VerticalAlignment="Top" Width="71"/>
 
-            <Label x:Name="String8" Content="Label" HorizontalAlignment="Left" Height="26" Margin="105,231,0,0" VerticalAlignment="Top" Width="41"/>
-            <Label x:Name="String9" Content="Label" HorizontalAlignment="Left" Height="26" Margin="173,280,0,0" VerticalAlignment="Top" Width="41"/>
+            <Label x:Name="String8"  HorizontalAlignment="Left" Height="26" Margin="105,231,0,0" VerticalAlignment="Top" Width="71"/>
+            <Label x:Name="String9" HorizontalAlignment="Left" Height="26" Margin="173,280,0,0" VerticalAlignment="Top" Width="71"/>
 
-            <Label x:Name="String10" Content="Label" HorizontalAlignment="Left" Height="26" Margin="250,231,0,0" VerticalAlignment="Top" Width="40"/>
-            <Label x:Name="String11" Content="Label" HorizontalAlignment="Left" Height="26" Margin="320,231,0,0" VerticalAlignment="Top" Width="40"/>
-            <Label x:Name="String12" Content="Label" HorizontalAlignment="Left" Height="26" Margin="326,280,0,0" VerticalAlignment="Top" Width="41"/>
+            <Label x:Name="String10"  HorizontalAlignment="Left" Height="26" Margin="250,231,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label x:Name="String11"  HorizontalAlignment="Left" Height="26" Margin="320,231,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label x:Name="String12" HorizontalAlignment="Left" Height="26" Margin="326,280,0,0" VerticalAlignment="Top" Width="71"/>
 
-            <Label x:Name="String13" Content="Label" HorizontalAlignment="Left" Height="26" Margin="460,231,0,0" VerticalAlignment="Top" Width="40"/>
-            <Label x:Name="String14" Content="Label" HorizontalAlignment="Left" Height="26" Margin="445,280,0,0" VerticalAlignment="Top" Width="41"/>
-            <Label x:Name="String15" Content="Label" HorizontalAlignment="Left" Height="26" Margin="525,280,0,0" VerticalAlignment="Top" Width="41"/>
-            <Label x:Name="fLable" Content="Label" HorizontalAlignment="Left" Height="26" Margin="209,95,0,0" VerticalAlignment="Top" Width="41"/>
+            <Label x:Name="String13" HorizontalAlignment="Left" Height="26" Margin="460,231,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label x:Name="String14" HorizontalAlignment="Left" Height="26" Margin="445,280,0,0" VerticalAlignment="Top" Width="71"/>
+            <Label x:Name="String15"  HorizontalAlignment="Left" Height="26" Margin="525,280,0,0" VerticalAlignment="Top" Width="71"/>
+            <Label x:Name="fLable" HorizontalAlignment="Left" Height="26" Margin="233,96,0,0" VerticalAlignment="Top" Width="71"/>
         </Grid>
 
         <Label Content="Вибір фільтра" HorizontalAlignment="Left" Height="31" Margin="10,61,0,0" VerticalAlignment="Top" Width="134"/>
-        <ComboBox HorizontalAlignment="Left" Height="22" Margin="322,70,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Гц"/>
-            <ComboBoxItem Content="кГц"/>
-            <ComboBoxItem Content="мГц"/>
-            <ComboBoxItem Content="гГц"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Height="22" Margin="459,70,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="пФ"/>
-            <ComboBoxItem Content="нФ"/>
-            <ComboBoxItem Content="мкФ"/>
-            <ComboBoxItem Content="Ф"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Height="22" Margin="585,70,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="мкГн"/>
-            <ComboBoxItem Content="мГн"/>
-            <ComboBoxItem Content="Гн"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Height="22" Margin="725,70,0,0" VerticalAlignment="Top" Width="55">
-            <ComboBoxItem Content="Ом"/>
-            <ComboBoxItem Content="кОм"/>
-            <ComboBoxItem Content="мОм"/>
-        </ComboBox>
+
         <Label Content="Частота зрізу" HorizontalAlignment="Left" Height="27" Margin="287,43,0,0" VerticalAlignment="Top" Width="92"/>
         <Label Content="Ємність" HorizontalAlignment="Left" Height="27" Margin="439,43,0,0" VerticalAlignment="Top" Width="92"/>
         <Label Content="Індуктивність" HorizontalAlignment="Left" Height="27" Margin="550,43,0,0" VerticalAlignment="Top" Width="92"/>

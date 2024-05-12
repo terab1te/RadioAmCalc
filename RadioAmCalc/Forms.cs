@@ -16,6 +16,12 @@ l = Math.Round((r * c * r),3); нахождение L имея R и C
 c = Math.Round(1 / (Math.Pow(2 * Math.PI * fLC, 2) * l) * Math.Pow(10, 6), 3); нахождение C имея F и L
 l = Math.Round(r / (2 * Math.PI * fLC),2); нахождение L имея F и R
 */
+
+        public double FindfRC(double c , double r)
+        {
+            double fRC = Math.Round(1 / (2 * Math.PI * (r * c)) * 1000, 3);
+            return fRC;
+        }
         public double FindfLC(double c, double l)
         {
             double fLC = Math.Round(1 / (2 * Math.PI * (Math.Sqrt(l * c))) * 1000, 3);
@@ -24,7 +30,13 @@ l = Math.Round(r / (2 * Math.PI * fLC),2); нахождение L имея F и 
         public double FindL(double f, double c)
         {
             double r = Math.Round(1 / (2 * Math.PI * (f * c)), 2);
-            double l = Math.Round((r * c * r), 2);
+            double l = Math.Round((r * c * r), 3);
+            return l;
+        }
+        
+        public double FindL2(double f, double r)
+        {
+            double l = Math.Round(r / (2 * Math.PI * f), 2);
             return l;
         }
 
