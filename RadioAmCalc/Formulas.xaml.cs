@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Label = System.Windows.Forms.Label;
 using TabControl = System.Windows.Controls.TabControl;
 using TextBox = System.Windows.Controls.TextBox;
 
@@ -26,6 +27,8 @@ namespace RadioAmCalc
         public Formulas()
         {
             InitializeComponent();
+            radioButton1.IsChecked = true;
+
         }
 
         private void CloseTab(object sender, RoutedEventArgs e)
@@ -69,6 +72,45 @@ namespace RadioAmCalc
                     ImageV4.Visibility = Visibility.Hidden;
                 Label1.Visibility = Visibility.Visible;
                     Label2.Visibility = Visibility.Hidden;
+
+                String1.Visibility = Visibility.Visible;
+                String2.Visibility = Visibility.Visible;
+                String3.Visibility = Visibility.Visible;
+                String4.Visibility = Visibility.Visible;
+                String5.Visibility = Visibility.Visible;
+                String6.Visibility = Visibility.Visible;
+                String7.Visibility = Visibility.Visible;
+                String75.Visibility = Visibility.Visible;
+                String8.Visibility = Visibility.Visible;
+                String9.Visibility = Visibility.Visible;
+                String10.Visibility = Visibility.Visible;
+                String11.Visibility = Visibility.Visible;
+                String12.Visibility = Visibility.Visible;
+                String13.Visibility = Visibility.Visible;
+                String14.Visibility = Visibility.Visible;
+                String15.Visibility = Visibility.Visible;
+
+                String16.Visibility = Visibility.Hidden;
+                String17.Visibility = Visibility.Hidden;
+                String18.Visibility = Visibility.Hidden;
+                String19.Visibility = Visibility.Hidden;
+                String20.Visibility = Visibility.Hidden;
+                String21.Visibility = Visibility.Hidden;
+                String22.Visibility = Visibility.Hidden;
+                String23.Visibility = Visibility.Hidden;
+                String24.Visibility = Visibility.Hidden;
+                String25.Visibility = Visibility.Hidden;
+                String26.Visibility = Visibility.Hidden;
+                String27.Visibility = Visibility.Hidden;
+                String28.Visibility = Visibility.Hidden;
+                String29.Visibility = Visibility.Hidden;
+                String30.Visibility = Visibility.Hidden;
+                String31.Visibility = Visibility.Hidden;
+
+
+
+
+
             }
             else if (sender == radioButton2 && radioButton2.IsChecked == true)
             {
@@ -76,6 +118,42 @@ namespace RadioAmCalc
                     ImageN4.Visibility = Visibility.Hidden;
                 Label2.Visibility = Visibility.Visible;
                     Label1.Visibility = Visibility.Hidden;
+
+                String1.Visibility = Visibility.Hidden;
+                String2.Visibility = Visibility.Hidden;
+                String3.Visibility = Visibility.Hidden;
+                String4.Visibility = Visibility.Hidden;
+                String5.Visibility = Visibility.Hidden;
+                String6.Visibility = Visibility.Hidden;
+                String7.Visibility = Visibility.Hidden;
+                String75.Visibility = Visibility.Hidden;
+                String8.Visibility = Visibility.Hidden;
+                String9.Visibility = Visibility.Hidden;
+                String10.Visibility = Visibility.Hidden;
+                String11.Visibility = Visibility.Hidden;
+                String12.Visibility = Visibility.Hidden;
+                String13.Visibility = Visibility.Hidden;
+                String14.Visibility = Visibility.Hidden;
+                String15.Visibility = Visibility.Hidden;
+
+                String16.Visibility = Visibility.Visible;
+                String17.Visibility = Visibility.Visible;
+                String18.Visibility = Visibility.Visible;
+                String19.Visibility = Visibility.Visible;
+                String20.Visibility = Visibility.Visible;
+                String21.Visibility = Visibility.Visible;
+                String22.Visibility = Visibility.Visible;
+                String23.Visibility = Visibility.Visible;
+                String24.Visibility = Visibility.Visible;
+                String25.Visibility = Visibility.Visible;
+                String26.Visibility = Visibility.Visible;
+                String27.Visibility = Visibility.Visible;
+                String28.Visibility = Visibility.Visible;
+                String29.Visibility = Visibility.Visible;
+                String30.Visibility = Visibility.Visible;
+                String31.Visibility = Visibility.Visible;
+
+
             }
         }
 
@@ -110,6 +188,9 @@ namespace RadioAmCalc
                 String13.Content = Convert.ToDouble(String8.Content);
                 String14.Content = Convert.ToDouble(String2.Content)/2;
                 String15.Content = Convert.ToDouble(String2.Content) / 2;
+
+
+
 
             } 
             else if(!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox3.Text))//f/L
@@ -191,6 +272,22 @@ namespace RadioAmCalc
                 String15.Content = Convert.ToDouble(String2.Content) / 2;
 
             }
+            String16.Content = String2.Content;
+            String17.Content = String1.Content;
+            String18.Content = Convert.ToDouble(String2.Content) * 2;
+            String19.Content = Convert.ToDouble(String2.Content) * 2;
+            String20.Content = String1.Content;
+            String21.Content = String2.Content;
+            String22.Content = Convert.ToDouble(String1.Content) * 2;
+            String23.Content = Convert.ToDouble(String1.Content) * 2;
+            String24.Content = String2.Content;
+            String25.Content = String8.Content;
+            String26.Content = Convert.ToDouble(String2.Content) * 2;
+            String27.Content = Convert.ToDouble(String2.Content) * 2;
+            String28.Content = String8.Content;
+            String29.Content = String2.Content;
+            String30.Content = Convert.ToDouble(String8.Content) * 2;
+            String31.Content = Convert.ToDouble(String8.Content) * 2;
         }
     }
 }   
